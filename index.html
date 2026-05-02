@@ -1,99 +1,747 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>7a Mathematik – Klassenarbeit: Terme und Gleichungen</title>
-<style>
-:root{--bg:#f6f7fb;--paper:#fff;--ink:#172033;--muted:#5f6b7a;--line:#d7deea;--accent:#6846c7;--accent2:#0b7fab;--good:#178a4b;--warn:#c56b00;--bad:#b42318;--soft:#eef3ff;--soft2:#f2fbff}
-*{box-sizing:border-box} body{margin:0;background:linear-gradient(135deg,#f7f8ff,#eef7fb);font-family:Inter,Arial,sans-serif;color:var(--ink);line-height:1.45}.wrap{max-width:1050px;margin:22px auto;padding:0 16px}.paper{background:var(--paper);border:1px solid var(--line);border-radius:20px;box-shadow:0 14px 40px rgba(21,35,70,.12);overflow:hidden}.head{padding:26px 30px;background:linear-gradient(135deg,#ffffff,#eef1ff);border-bottom:1px solid var(--line)}h1{margin:0 0 8px;font-size:28px}.sub{color:var(--muted);font-size:15px}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.box{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff}.box b{display:block;font-size:12px;color:var(--muted);font-weight:700}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.btn{border:0;border-radius:999px;background:var(--accent);color:white;padding:10px 14px;font-weight:700;cursor:pointer}.btn.secondary{background:#fff;color:var(--accent);border:1px solid var(--accent)}.content{padding:26px 30px}.note{padding:14px 16px;border-radius:14px;background:#fff8e8;border:1px solid #f0d59b;margin-bottom:20px}.task{border:1px solid var(--line);border-radius:18px;margin:18px 0;background:#fff;overflow:hidden}.task-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;background:var(--soft);border-bottom:1px solid var(--line)}.nr{display:inline-flex;width:32px;height:32px;border-radius:50%;align-items:center;justify-content:center;background:var(--accent);color:#fff;font-weight:800;margin-right:10px}.pts{white-space:nowrap;font-weight:800;color:var(--accent)}.task-b{padding:18px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.mini{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:12px}.hint{border:1px dashed #b5c0d0;background:#fbfdff;border-radius:12px;padding:10px;margin-top:10px;color:var(--muted);font-size:14px}.pop{background:var(--accent2);color:#fff;border:0;border-radius:10px;padding:7px 10px;cursor:pointer;font-weight:700}.answer{width:100%;min-height:64px;border:1px solid var(--line);border-radius:12px;margin-top:10px;padding:10px;font-family:inherit}.table{width:100%;border-collapse:collapse;margin-top:10px}.table td,.table th{border:1px solid var(--line);padding:8px;text-align:center}.table th{background:#f1f5ff}.shape{display:flex;justify-content:center;margin:8px 0}.footer{padding:18px 30px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}.modal{display:none;position:fixed;inset:0;background:rgba(7,12,25,.55);z-index:20;align-items:center;justify-content:center;padding:18px}.modal.on{display:flex}.modal-card{max-width:760px;width:100%;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.35);overflow:hidden}.modal-h{padding:16px 20px;background:linear-gradient(135deg,var(--accent),#3b82f6);color:white;display:flex;justify-content:space-between;align-items:center}.modal-b{padding:20px;max-height:75vh;overflow:auto}.x{background:rgba(255,255,255,.18);border:0;color:#fff;font-size:22px;border-radius:8px;width:36px;height:36px;cursor:pointer}.formula{font-family:Georgia,serif;background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px;margin:8px 0}.solution{display:none;margin-top:12px;border-left:4px solid var(--good);padding:10px 12px;background:#f0fff6;border-radius:10px}.show .solution{display:block}.small{font-size:13px;color:var(--muted)}@media print{body{background:#fff}.paper{box-shadow:none;border:0}.tools,.pop,.solution,.footer button{display:none}.task{page-break-inside:avoid}.wrap{max-width:none;margin:0}.head,.content{padding:18px}}@media(max-width:760px){.meta,.grid2{grid-template-columns:1fr}.head,.content{padding:18px}h1{font-size:22px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Probe-Klassenarbeit: Terme und Gleichungen – Klasse 7</title>
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --ink:#1f2937;
+      --muted:#6b7280;
+      --brand:#2563eb;
+      --brand2:#7c3aed;
+      --ok:#16a34a;
+      --warn:#f59e0b;
+      --line:#dbe3f0;
+      --soft:#eef4ff;
+      --danger:#dc2626;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:linear-gradient(135deg,#f7fbff,#f3efff);
+      color:var(--ink);
+      line-height:1.55;
+    }
+    header{
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      color:white;
+      padding:28px 18px;
+      text-align:center;
+      box-shadow:0 4px 20px rgba(0,0,0,.15);
+    }
+    header h1{margin:0;font-size:30px}
+    header p{margin:8px auto 0;max-width:920px;font-size:16px;opacity:.95}
+    main{max-width:1100px;margin:24px auto;padding:0 16px 60px}
+    .info-grid{
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      gap:14px;
+      margin-bottom:20px;
+    }
+    .info-box,.card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+      box-shadow:0 2px 12px rgba(31,41,55,.07);
+    }
+    .info-box b{color:var(--brand)}
+    .toolbar{
+      position:sticky;
+      top:0;
+      z-index:5;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      background:rgba(245,247,251,.93);
+      backdrop-filter:blur(8px);
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      margin:18px 0;
+    }
+    button{
+      border:0;
+      border-radius:12px;
+      padding:10px 14px;
+      font-weight:700;
+      cursor:pointer;
+      background:var(--brand);
+      color:white;
+      box-shadow:0 2px 8px rgba(37,99,235,.25);
+    }
+    button.secondary{background:#111827}
+    button.light{background:#e5e7eb;color:#111827;box-shadow:none}
+    button.hint{background:#f59e0b;color:#111827;box-shadow:none}
+    button.solution{background:#16a34a}
+    button:hover{filter:brightness(.96)}
+    h2{
+      margin:30px 0 12px;
+      border-left:7px solid var(--brand);
+      padding-left:12px;
+      font-size:23px;
+    }
+    .section-note{
+      color:var(--muted);
+      margin-top:-6px;
+      margin-bottom:14px;
+    }
+    .task{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:18px;
+      margin:14px 0;
+      box-shadow:0 2px 12px rgba(31,41,55,.06);
+    }
+    .task-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      border-bottom:1px dashed var(--line);
+      padding-bottom:10px;
+      margin-bottom:12px;
+    }
+    .task-title{
+      font-size:18px;
+      font-weight:800;
+    }
+    .points{
+      background:var(--soft);
+      color:var(--brand);
+      padding:4px 10px;
+      border-radius:999px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+    .question{margin:8px 0}
+    .answer{
+      min-height:38px;
+      border-bottom:2px solid #9ca3af;
+      margin:10px 0 4px;
+    }
+    .wide-answer{min-height:80px}
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .table-wrap{overflow-x:auto}
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:10px 0;
+      background:white;
+    }
+    th,td{
+      border:1px solid var(--line);
+      padding:9px;
+      text-align:center;
+      vertical-align:middle;
+    }
+    th{background:#eef4ff}
+    .formula{
+      font-family: "Times New Roman", serif;
+      background:#f8fafc;
+      padding:2px 6px;
+      border-radius:6px;
+      border:1px solid #e5e7eb;
+      display:inline-block;
+    }
+    .svgbox{
+      display:flex;
+      justify-content:center;
+      margin:12px 0;
+      padding:10px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:14px;
+    }
+    .modal{
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:50;
+      background:rgba(17,24,39,.55);
+      padding:20px;
+      align-items:center;
+      justify-content:center;
+    }
+    .modal-content{
+      background:white;
+      width:min(880px,96vw);
+      max-height:88vh;
+      overflow:auto;
+      border-radius:18px;
+      padding:22px;
+      box-shadow:0 20px 70px rgba(0,0,0,.35);
+      border:1px solid var(--line);
+    }
+    .modal-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:10px;
+      margin-bottom:12px;
+    }
+    .modal h3{margin:0;color:var(--brand)}
+    .close{
+      background:#ef4444;
+      color:white;
+      border-radius:50%;
+      width:36px;
+      height:36px;
+      padding:0;
+      font-size:18px;
+    }
+    .hidden-solution{
+      display:none;
+      margin-top:12px;
+      padding:12px;
+      border-left:5px solid var(--ok);
+      background:#f0fdf4;
+      border-radius:12px;
+    }
+    .badge{
+      display:inline-block;
+      padding:3px 8px;
+      border-radius:999px;
+      background:#ede9fe;
+      color:#5b21b6;
+      font-weight:700;
+      font-size:13px;
+    }
+    .checklist li{margin:7px 0}
+    .print-note{font-size:13px;color:var(--muted)}
+    @media print{
+      body{background:white}
+      header,.toolbar,button,.modal{display:none!important}
+      main{max-width:none;margin:0;padding:0}
+      .task,.info-box,.card{box-shadow:none;break-inside:avoid}
+      .hidden-solution{display:none!important}
+    }
+    @media (max-width:760px){
+      .info-grid,.grid-2{grid-template-columns:1fr}
+      header h1{font-size:24px}
+    }
+  </style>
 </head>
 <body>
-<div class="wrap"><div class="paper">
-<header class="head"><h1>Klassenarbeit – Terme und Gleichungen</h1><div class="sub">7. Klasse Mathematik · Übungsklausur nach euren bearbeiteten Seiten · mit Lern-Pop-ups</div>
-<div class="meta"><div class="box"><b>Name</b>__________________</div><div class="box"><b>Datum</b>__________________</div><div class="box"><b>Arbeitszeit</b>45 Minuten</div><div class="box"><b>Punkte</b>60</div></div>
-<div class="tools"><button class="btn" onclick="window.print()">Drucken / PDF speichern</button><button class="btn secondary" onclick="toggleSolutions()">Musterlösungen ein-/ausblenden</button></div></header>
-<main class="content" id="exam">
-<div class="note"><b>Hinweis:</b> Schreibe Rechenwege sauber auf. Bei Sachaufgaben immer einen passenden Term oder eine Gleichung und einen Antwortsatz notieren.</div>
+<header>
+  <h1>Probe-Klassenarbeit: Terme und Gleichungen</h1>
+  <p>Klasse 7 · Vollständige Übung zu Termen, Gleichungen, Gleichwertigkeit, Sachaufgaben, Tabellen, Flächen, Umfang und Fehleranalyse</p>
+</header>
 
-<section class="task"><div class="task-h"><div><span class="nr">1</span>Einsetzen und Wert berechnen</div><span class="pts">6 P</span></div><div class="task-b">
-<button class="pop" onclick="openPop('p1')">Konu anlatımı</button>
-<p>Setze für x die Zahlen −2, 0 und 3 ein. Berechne jeweils den Wert.</p>
-<div class="grid2"><div class="mini">a) 3x − 5</div><div class="mini">b) 4 + 5x</div><div class="mini">c) 5(x − 1) + 3</div><div class="mini">d) 4(x − 1) + 6x</div></div><textarea class="answer" placeholder="Çözümünü buraya yaz..."></textarea>
-<div class="solution"><b>Lösung:</b> a) x=-2:-11, x=0:-5, x=3:4 · b) -6,4,19 · c) -12,-2,13 · d) -28,-4,26</div></div></section>
+<main>
+  <div class="info-grid">
+    <div class="info-box"><b>Name:</b><br>________________________</div>
+    <div class="info-box"><b>Datum:</b><br>________________________</div>
+    <div class="info-box"><b>Arbeitszeit:</b><br>45–60 Minuten · 60 Punkte</div>
+  </div>
 
-<section class="task"><div class="task-h"><div><span class="nr">2</span>Terme vereinfachen</div><span class="pts">8 P</span></div><div class="task-b">
-<button class="pop" onclick="openPop('p2')">Konu anlatımı</button>
-<p>Vereinfache so weit wie möglich.</p>
-<div class="grid2"><div class="mini">a) 3x + 4 + 2x + 1</div><div class="mini">b) a + a + 4 + a</div><div class="mini">c) 13 + 3x − 18</div><div class="mini">d) 5x + 10x</div><div class="mini">e) −4y · 2 − 8 − 9y</div><div class="mini">f) 6 + f + 3f + f + 9f</div></div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> a) 5x+5 b) 3a+4 c) 3x−5 d) 15x e) −17y−8 f) 14f+6</div></div></section>
+  <div class="card">
+    <b>Hinweis:</b> Bearbeite sauber und schreibe Rechenwege auf. Bei Textaufgaben immer zuerst die Variable erklären.
+    <br><span class="print-note">Tipp: Klicke bei jeder Aufgabe auf „Lerntipp“, um eine kurze Erklärung zu öffnen. Die Lösungen können einzeln eingeblendet werden.</span>
+  </div>
 
-<section class="task"><div class="task-h"><div><span class="nr">3</span>Ausmultiplizieren und Minusklammer</div><span class="pts">8 P</span></div><div class="task-b">
-<button class="pop" onclick="openPop('p3')">Konu anlatımı</button>
-<p>Forme um und vereinfache.</p>
-<div class="grid2"><div class="mini">a) 3(x + 2)</div><div class="mini">b) 5(x − 4)</div><div class="mini">c) 7 − (4x − 3)</div><div class="mini">d) 7,5 − (6x − 5)</div><div class="mini">e) 2(3x + 4) − x</div><div class="mini">f) −3(2x − 5) + 4x</div></div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> a)3x+6 b)5x−20 c)10−4x d)12,5−6x e)5x+8 f)−2x+15</div></div></section>
+  <div class="toolbar">
+    <div>
+      <button onclick="window.print()">Drucken / PDF speichern</button>
+      <button class="secondary" onclick="showAllSolutions()">Alle Lösungen anzeigen</button>
+      <button class="light" onclick="hideAllSolutions()">Lösungen ausblenden</button>
+    </div>
+    <div><span class="badge">Vollständiger Prüfungsumfang</span></div>
+  </div>
 
-<section class="task"><div class="task-h"><div><span class="nr">4</span>Ausklammern</div><span class="pts">6 P</span></div><div class="task-b">
-<button class="pop" onclick="openPop('p4')">Konu anlatımı</button>
-<p>Klammere den gemeinsamen Faktor aus.</p><div class="grid2"><div class="mini">a) 9x − 15</div><div class="mini">b) 21 + 48x</div><div class="mini">c) 66x − 27</div><div class="mini">d) −10x + 18</div></div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> a)3(3x−5) b)3(7+16x) c)3(22x−9) d)−2(5x−9) veya 2(−5x+9)</div></div></section>
+  <h2>Teil A – Terme einsetzen und vereinfachen</h2>
+  <p class="section-note">Grundlagen: Werte einsetzen, Terme ordnen, zusammenfassen und Klammern richtig behandeln.</p>
 
-<section class="task"><div class="task-h"><div><span class="nr">5</span>Gleichwertige Terme prüfen</div><span class="pts">6 P</span></div><div class="task-b"><button class="pop" onclick="openPop('p5')">Konu anlatımı</button>
-<p>Prüfe durch Umformen, ob die Terme gleichwertig sind.</p><div class="grid2"><div class="mini">a) x + 4 + x und 4x + 2</div><div class="mini">b) 6x − x + 2 und 3 + 5x − 1</div><div class="mini">c) 0,6x − 7/10 + 0,4x + 2,7 und x + 2</div></div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> a) nein: 2x+4 ≠ 4x+2. b) ja: 5x+2 = 5x+2. c) ja: 1x+2 = x+2.</div></div></section>
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">1. Werte in Terme einsetzen</div>
+      <div class="points">6 P</div>
+    </div>
+    <p>Setze <span class="formula">x = 3</span> ein und berechne den Wert des Terms.</p>
+    <div class="grid-2">
+      <div>a) <span class="formula">2x + 5</span><div class="answer"></div></div>
+      <div>b) <span class="formula">4x − 7</span><div class="answer"></div></div>
+      <div>c) <span class="formula">3(x + 2)</span><div class="answer"></div></div>
+      <div>d) <span class="formula">5(x − 1)</span><div class="answer"></div></div>
+      <div>e) <span class="formula">−1,5x − 2,3</span><div class="answer"></div></div>
+      <div>f) <span class="formula">2(x + 3) − 1</span><div class="answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m1')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s1')">Lösung</button>
+    <div id="s1" class="hidden-solution">
+      a) 11 · b) 5 · c) 15 · d) 10 · e) −6,8 · f) 11
+    </div>
+  </section>
 
-<section class="task"><div class="task-h"><div><span class="nr">6</span>Situation → Term</div><span class="pts">8 P</span></div><div class="task-b"><button class="pop" onclick="openPop('p6')">Konu anlatımı</button>
-<p>Stelle jeweils einen Term mit Variable auf und berechne zusätzlich den Wert für die angegebene Zahl.</p>
-<div class="mini">a) Rebecca hat 45 € im Sparschwein. Jede Woche kommen 3,50 € dazu. Term für t Wochen. Berechne für t = 10.</div>
-<div class="mini">b) Snowboardausleihe: 27 € Grundgebühr, jeder Tag 22,50 €. Term für t Tage. Berechne für t = 6.</div>
-<div class="mini">c) Ein Installateur verlangt 20 € Anfahrt und 44 € pro Stunde. Term für t Stunden. Berechne für t = 3.</div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> a)45+3,5t; t=10 → 80€. b)27+22,5t; t=6 → 162€. c)20+44t; t=3 → 152€.</div></div></section>
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">2. Terme so weit wie möglich vereinfachen</div>
+      <div class="points">10 P</div>
+    </div>
+    <p>Vereinfache. Ordne zuerst die Summanden mit Variable und die Zahlen.</p>
+    <div class="grid-2">
+      <div>a) <span class="formula">3x + 5x − 4</span><div class="answer"></div></div>
+      <div>b) <span class="formula">7 + 2x − 3</span><div class="answer"></div></div>
+      <div>c) <span class="formula">4(x − 3)</span><div class="answer"></div></div>
+      <div>d) <span class="formula">5(x + 2) − 3x</span><div class="answer"></div></div>
+      <div>e) <span class="formula">−(x − 6) + 2x</span><div class="answer"></div></div>
+      <div>f) <span class="formula">6(x − 1) − 2(x − 1)</span><div class="answer"></div></div>
+      <div>g) <span class="formula">3x + 4 + 2x + 1</span><div class="answer"></div></div>
+      <div>h) <span class="formula">7 − (4x − 3)</span><div class="answer"></div></div>
+      <div>i) <span class="formula">4 · (3 − x)</span><div class="answer"></div></div>
+      <div>j) <span class="formula">−2 · (x − 6)</span><div class="answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m2')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s2')">Lösung</button>
+    <div id="s2" class="hidden-solution">
+      a) 8x − 4 · b) 2x + 4 · c) 4x − 12 · d) 2x + 10 · e) x + 6 · f) 4x − 4 · g) 5x + 5 · h) 10 − 4x · i) 12 − 4x · j) −2x + 12
+    </div>
+  </section>
 
-<section class="task"><div class="task-h"><div><span class="nr">7</span>Flächeninhalt als Term</div><span class="pts">7 P</span></div><div class="task-b"><button class="pop" onclick="openPop('p7')">Konu anlatımı</button>
-<p>Die Figur besteht aus zwei Rechtecken. Begründe, dass der Term den Flächeninhalt beschreibt, und vereinfache ihn.</p>
-<div class="shape"><svg width="260" height="170" viewBox="0 0 260 170"><rect x="40" y="30" width="150" height="100" fill="#b9dff4" stroke="#172033" stroke-width="2"/><rect x="40" y="30" width="70" height="25" fill="#d9f0c4" stroke="#172033" stroke-width="2"/><line x1="110" y1="30" x2="110" y2="130" stroke="#172033" stroke-dasharray="4"/><text x="115" y="150">d</text><text x="55" y="25">7 − d</text><text x="24" y="85">8</text><text x="68" y="50">2</text></svg></div>
-<div class="formula">A = 8d + 2(7 − d)</div><p>Berechne außerdem den Flächeninhalt für d = 4 und d = 6.</p><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> A=8d+14−2d=6d+14. Für d=4:38. Für d=6:50.</div></div></section>
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">3. Tabelle ausfüllen</div>
+      <div class="points">6 P</div>
+    </div>
+    <p>Berechne den Wert des Terms <span class="formula">3x − 5</span> für die angegebenen Werte.</p>
+    <div class="table-wrap">
+      <table>
+        <tr><th>x</th><td>−2</td><td>−1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+        <tr><th>3x − 5</th><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+      </table>
+    </div>
+    <button class="hint" onclick="openModal('m3')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s3')">Lösung</button>
+    <div id="s3" class="hidden-solution">
+      Für x = −2: −11 · x = −1: −8 · x = 0: −5 · x = 1: −2 · x = 2: 1 · x = 3: 4
+    </div>
+  </section>
 
-<section class="task"><div class="task-h"><div><span class="nr">8</span>Umfang als Term</div><span class="pts">5 P</span></div><div class="task-b"><button class="pop" onclick="openPop('p8')">Konu anlatımı</button>
-<p>Stelle für den Umfang des Dreiecks einen Term auf und vereinfache ihn. Berechne anschließend für x = 2 und x = 3.</p>
-<div class="shape"><svg width="260" height="140" viewBox="0 0 260 140"><polygon points="55,105 205,105 130,25" fill="#fdecc8" stroke="#172033" stroke-width="2"/><text x="88" y="124">3x</text><text x="45" y="68">x + 5</text><text x="165" y="68">3 + x</text></svg></div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> U=3x+(x+5)+(x+3)=5x+8. x=2 → 18, x=3 → 23.</div></div></section>
+  <h2>Teil B – Gleichwertige Terme, Distributivgesetz und Ausklammern</h2>
 
-<section class="task"><div class="task-h"><div><span class="nr">9</span>Gleichungen lösen</div><span class="pts">8 P</span></div><div class="task-b"><button class="pop" onclick="openPop('p9')">Konu anlatımı</button>
-<p>Löse die Gleichungen systematisch.</p><div class="grid2"><div class="mini">a) 7x = 49</div><div class="mini">b) 4x + 24 = 184</div><div class="mini">c) 5(2 − x) = −5</div><div class="mini">d) 2x + 6 = 19</div></div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> a)x=7 b)x=40 c)x=3 d)x=6,5</div></div></section>
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">4. Gleichwertige Terme erkennen</div>
+      <div class="points">8 P</div>
+    </div>
+    <p>Entscheide, ob die Terme gleichwertig sind. Begründe durch Umformen.</p>
+    <div class="grid-2">
+      <div>a) <span class="formula">x + 5 + x</span> und <span class="formula">2x + 5</span><div class="answer wide-answer"></div></div>
+      <div>b) <span class="formula">3(x + 2)</span> und <span class="formula">3x + 2</span><div class="answer wide-answer"></div></div>
+      <div>c) <span class="formula">4x − 2 + x</span> und <span class="formula">5x − 2</span><div class="answer wide-answer"></div></div>
+      <div>d) <span class="formula">2(x + 4)</span> und <span class="formula">2x + 8</span><div class="answer wide-answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m4')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s4')">Lösung</button>
+    <div id="s4" class="hidden-solution">
+      a) gleichwertig · b) nicht gleichwertig, denn 3(x+2)=3x+6 · c) gleichwertig · d) gleichwertig
+    </div>
+  </section>
 
-<section class="task"><div class="task-h"><div><span class="nr">10</span>Fehler finden</div><span class="pts">4 P</span></div><div class="task-b"><button class="pop" onclick="openPop('p10')">Konu anlatımı</button>
-<p>Erkläre den Fehler und korrigiere.</p><div class="mini">Der Term 120 + 100x ergibt für x = 0:<br>120 + 100 · 0 = 120 + 100 = 220</div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> Fehler: 100·0 wurde als 100 gerechnet. Richtig: 120+100·0=120+0=120.</div></div></section>
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">5. Ausmultiplizieren</div>
+      <div class="points">5 P</div>
+    </div>
+    <p>Multipliziere aus.</p>
+    <div class="grid-2">
+      <div>a) <span class="formula">3(x + 7)</span><div class="answer"></div></div>
+      <div>b) <span class="formula">5(x − 4)</span><div class="answer"></div></div>
+      <div>c) <span class="formula">−2(x − 6)</span><div class="answer"></div></div>
+      <div>d) <span class="formula">4(3 − x)</span><div class="answer"></div></div>
+      <div>e) <span class="formula">7(2x + 1)</span><div class="answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m5')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s5')">Lösung</button>
+    <div id="s5" class="hidden-solution">
+      a) 3x + 21 · b) 5x − 20 · c) −2x + 12 · d) 12 − 4x · e) 14x + 7
+    </div>
+  </section>
 
-<section class="task"><div class="task-h"><div><span class="nr">11</span>Immer – nie – manchmal</div><span class="pts">4 P</span></div><div class="task-b"><button class="pop" onclick="openPop('p11')">Konu anlatımı</button>
-<p>Entscheide: gilt immer, gilt nie oder kommt darauf an. Begründe kurz.</p><div class="mini">a) Der Wert des Terms −3x ist negativ.</div><div class="mini">b) Die Summe aus vier aufeinanderfolgenden natürlichen Zahlen ist durch 4 teilbar.</div><textarea class="answer"></textarea>
-<div class="solution"><b>Lösung:</b> a) kommt darauf an: x positiv → negativ, x negativ → positiv, x=0 → 0. b) nie: n+(n+1)+(n+2)+(n+3)=4n+6, nicht durch 4 teilbar.</div></div></section>
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">6. Ausklammern</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Klammere den größten gemeinsamen Faktor aus.</p>
+    <div class="grid-2">
+      <div>a) <span class="formula">6x + 12</span><div class="answer"></div></div>
+      <div>b) <span class="formula">10x − 5</span><div class="answer"></div></div>
+      <div>c) <span class="formula">8x + 16</span><div class="answer"></div></div>
+      <div>d) <span class="formula">15x + 20</span><div class="answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m6')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s6')">Lösung</button>
+    <div id="s6" class="hidden-solution">
+      a) 6(x + 2) · b) 5(2x − 1) · c) 8(x + 2) · d) 5(3x + 4)
+    </div>
+  </section>
 
-</main><footer class="footer">Hazırlık önerisi: önce 1–6 arası temel cebir, sonra 7–8 geometri-terim, en son 9–11 sınav yorumu çalışılsın.</footer></div></div>
+  <h2>Teil C – Terme aufstellen: Alltag, Umfang und Fläche</h2>
 
-<div class="modal" id="modal"><div class="modal-card"><div class="modal-h"><b id="mtitle">Konu anlatımı</b><button class="x" onclick="closePop()">×</button></div><div class="modal-b" id="mbody"></div></div></div>
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">7. Sachaufgabe: Kostenmodell</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Ein Installateur verlangt eine Grundgebühr von 20 € und zusätzlich 44 € pro Arbeitsstunde.</p>
+    <p>a) Erkläre die Variable. b) Stelle einen Term für die Gesamtkosten nach <span class="formula">t</span> Stunden auf. c) Berechne die Kosten für <span class="formula">t = 10</span>.</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m7')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s7')">Lösung</button>
+    <div id="s7" class="hidden-solution">
+      a) t = Anzahl der Arbeitsstunden · b) 44t + 20 · c) 44 · 10 + 20 = 460 €. Antwort: Für 10 Stunden kostet der Auftrag 460 €.
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">8. Sachaufgabe: Sparschwein</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Rebecca hat 45 € in ihrem Sparschwein. Jede Woche kommen 3,50 € dazu.</p>
+    <p>Stelle einen Term für das Ersparte nach <span class="formula">w</span> Wochen auf und berechne den Betrag nach 12 Wochen.</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m8')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s8')">Lösung</button>
+    <div id="s8" class="hidden-solution">
+      w = Anzahl der Wochen · Term: 45 + 3,50w · Für w = 12: 45 + 3,50 · 12 = 87 €. 
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">9. Umfang als Term</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Ein Rechteck hat die Länge <span class="formula">x</span> und die Breite <span class="formula">x + 3</span>.</p>
+    <p>Stelle einen Term für den Umfang auf und vereinfache ihn.</p>
+    <div class="svgbox">
+      <svg width="330" height="160" viewBox="0 0 330 160" aria-label="Rechteck">
+        <rect x="65" y="35" width="200" height="90" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/>
+        <text x="155" y="25" font-size="18">x</text>
+        <text x="272" y="85" font-size="18">x + 3</text>
+      </svg>
+    </div>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m9')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s9')">Lösung</button>
+    <div id="s9" class="hidden-solution">
+      U = x + (x + 3) + x + (x + 3) = 4x + 6. Alternativ: U = 2 · x + 2 · (x + 3) = 4x + 6.
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">10. Fläche als Term</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Ein Rechteck hat die Länge <span class="formula">x + 4</span> und die Breite <span class="formula">5</span>.</p>
+    <p>Stelle einen Term für den Flächeninhalt auf und vereinfache ihn.</p>
+    <div class="answer"></div>
+    <button class="hint" onclick="openModal('m10')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s10')">Lösung</button>
+    <div id="s10" class="hidden-solution">
+      A = 5 · (x + 4) = 5x + 20
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">11. Zusammengesetzte Fläche</div>
+      <div class="points">6 P</div>
+    </div>
+    <p>Die Figur besteht aus zwei Rechtecken. Stelle einen Term für den Flächeninhalt auf und vereinfache ihn.</p>
+    <div class="svgbox">
+      <svg width="500" height="260" viewBox="0 0 500 260" aria-label="L-förmige Fläche">
+        <rect x="95" y="40" width="280" height="160" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="3"/>
+        <rect x="95" y="80" width="110" height="120" fill="#ffffff" stroke="#ffffff" stroke-width="0"/>
+        <path d="M95 40 H375 V200 H205 V80 H95 Z" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="3"/>
+        <line x1="95" y1="25" x2="375" y2="25" stroke="#111827" stroke-width="2"/>
+        <line x1="95" y1="20" x2="95" y2="32" stroke="#111827" stroke-width="2"/>
+        <line x1="375" y1="20" x2="375" y2="32" stroke="#111827" stroke-width="2"/>
+        <text x="225" y="18" font-size="18">7</text>
+        <line x1="390" y1="40" x2="390" y2="200" stroke="#111827" stroke-width="2"/>
+        <line x1="384" y1="40" x2="397" y2="40" stroke="#111827" stroke-width="2"/>
+        <line x1="384" y1="200" x2="397" y2="200" stroke="#111827" stroke-width="2"/>
+        <text x="402" y="125" font-size="18">8</text>
+        <line x1="75" y1="40" x2="75" y2="80" stroke="#111827" stroke-width="2"/>
+        <line x1="69" y1="40" x2="82" y2="40" stroke="#111827" stroke-width="2"/>
+        <line x1="69" y1="80" x2="82" y2="80" stroke="#111827" stroke-width="2"/>
+        <text x="53" y="66" font-size="18">2</text>
+        <line x1="205" y1="220" x2="375" y2="220" stroke="#111827" stroke-width="2"/>
+        <line x1="205" y1="214" x2="205" y2="227" stroke="#111827" stroke-width="2"/>
+        <line x1="375" y1="214" x2="375" y2="227" stroke="#111827" stroke-width="2"/>
+        <text x="284" y="245" font-size="18">d</text>
+        <text x="238" y="130" font-size="16" fill="#1d4ed8">A₁ = 8d</text>
+        <text x="107" y="63" font-size="16" fill="#1d4ed8">A₂ = 2(7 − d)</text>
+      </svg>
+    </div>
+    <p><b>Hinweis:</b> Die rechte Fläche hat Breite <span class="formula">d</span> und Höhe <span class="formula">8</span>. Der obere linke Streifen hat Höhe <span class="formula">2</span> und Breite <span class="formula">7 − d</span>.</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m11')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s11')">Lösung</button>
+    <div id="s11" class="hidden-solution">
+      A = 8d + 2(7 − d) = 8d + 14 − 2d = 6d + 14
+    </div>
+  </section>
+
+  <h2>Teil D – Gleichungen und Fehleranalyse</h2>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">12. Gleichungen lösen</div>
+      <div class="points">8 P</div>
+    </div>
+    <p>Löse die Gleichungen.</p>
+    <div class="grid-2">
+      <div>a) <span class="formula">3x = 18</span><div class="answer"></div></div>
+      <div>b) <span class="formula">5x − 10 = 0</span><div class="answer"></div></div>
+      <div>c) <span class="formula">2x + 6 = 16</span><div class="answer"></div></div>
+      <div>d) <span class="formula">4x − 8 = 12</span><div class="answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m12')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s12')">Lösung</button>
+    <div id="s12" class="hidden-solution">
+      a) x = 6 · b) x = 2 · c) x = 5 · d) x = 5
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">13. Sachaufgabe: Gleichung aufstellen und lösen</div>
+      <div class="points">5 P</div>
+    </div>
+    <p>Das Elefantenbaby Chandra wiegt bei der Geburt 116 kg. Es nimmt jede Woche etwa 7 kg zu. Nach wie vielen Wochen wiegt es 200 kg?</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m13')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s13')">Lösung</button>
+    <div id="s13" class="hidden-solution">
+      w = Anzahl der Wochen · 116 + 7w = 200 · 7w = 84 · w = 12. Antwort: Nach etwa 12 Wochen wiegt Chandra 200 kg.
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">14. Finde den Fehler</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Erkläre den Fehler und korrigiere die Rechnung.</p>
+    <p><span class="formula">120 + 100x</span> für <span class="formula">x = 0</span>:<br>
+    falsche Rechnung: <span class="formula">120 + 100 · 0 = 120 + 100 = 220</span></p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m14')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s14')">Lösung</button>
+    <div id="s14" class="hidden-solution">
+      Fehler: 100 · 0 wurde falsch berechnet. Richtig ist 100 · 0 = 0. Also: 120 + 100 · 0 = 120 + 0 = 120.
+    </div>
+  </section>
+
+  <h2>Teil E – Begründen: immer, nie oder es kommt darauf an</h2>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">15. Aussagen prüfen</div>
+      <div class="points">8 P</div>
+    </div>
+    <p>Entscheide: <b>gilt immer</b>, <b>gilt nie</b> oder <b>es kommt darauf an</b>. Begründe kurz.</p>
+    <div class="grid-2">
+      <div>a) Der Wert des Terms <span class="formula">−3x</span> ist negativ.<div class="answer wide-answer"></div></div>
+      <div>b) Die Summe aus vier aufeinanderfolgenden natürlichen Zahlen ist durch 4 teilbar.<div class="answer wide-answer"></div></div>
+      <div>c) <span class="formula">x + x = 2x</span><div class="answer wide-answer"></div></div>
+      <div>d) <span class="formula">2(x + 3) = 2x + 3</span><div class="answer wide-answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m15')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s15')">Lösung</button>
+    <div id="s15" class="hidden-solution">
+      a) Es kommt darauf an: Bei x &gt; 0 negativ, bei x &lt; 0 positiv, bei x = 0 null. 
+      b) Gilt nie: n+(n+1)+(n+2)+(n+3)=4n+6=4(n+1)+2, also Rest 2.
+      c) Gilt immer. 
+      d) Gilt nie, denn 2(x+3)=2x+6.
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">16. Terme aus sprachlichen Beschreibungen</div>
+      <div class="points">6 P</div>
+    </div>
+    <p>Sei <span class="formula">n</span> eine natürliche Zahl. Stelle jeweils einen Term auf.</p>
+    <div class="grid-2">
+      <div>a) eine Zahl, die um 3 größer als n ist<div class="answer"></div></div>
+      <div>b) eine Zahl, die um 7 kleiner als n ist<div class="answer"></div></div>
+      <div>c) eine Zahl, die doppelt so groß wie n ist<div class="answer"></div></div>
+      <div>d) eine Zahl, die dreimal so groß wie n ist<div class="answer"></div></div>
+      <div>e) ein Drittel von n<div class="answer"></div></div>
+      <div>f) drei Viertel von n zuzüglich 5<div class="answer"></div></div>
+    </div>
+    <button class="hint" onclick="openModal('m16')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s16')">Lösung</button>
+    <div id="s16" class="hidden-solution">
+      a) n + 3 · b) n − 7 · c) 2n · d) 3n · e) n/3 · f) 3/4 n + 5
+    </div>
+  </section>
+
+  <h2>Teil F – Zusatzaufgaben für die Bestnote</h2>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">17. Graph und Zuordnung</div>
+      <div class="points">5 P</div>
+    </div>
+    <p>Ein Eisbärbaby wiegt bei der Geburt 700 g. Es nimmt jeden Tag etwa 160 g zu.</p>
+    <p>a) Stelle einen Term für das Gewicht nach <span class="formula">t</span> Tagen auf. b) Berechne das Gewicht nach 5 Tagen. c) Nach wie vielen Tagen wiegt es ungefähr 13 kg?</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m17')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s17')">Lösung</button>
+    <div id="s17" class="hidden-solution">
+      a) 700 + 160t · b) 700 + 160 · 5 = 1500 g · c) 13 kg = 13000 g. 700 + 160t = 13000 → 160t = 12300 → t = 76,875. Also nach ungefähr 77 Tagen.
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">18. Kombinatorik: Verbindungsstrecken</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Zwischen <span class="formula">m</span> Punkten auf einem Kreis werden alle möglichen Verbindungsstrecken gezeichnet. Für m = 3 gibt es 3 Strecken, für m = 4 gibt es 6 Strecken, für m = 5 gibt es 10 Strecken.</p>
+    <p>Wie viele Verbindungsstrecken gibt es für <span class="formula">m = 6</span>? Begründe.</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m18')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s18')">Lösung</button>
+    <div id="s18" class="hidden-solution">
+      Für 6 Punkte gibt es 15 Verbindungsstrecken. Begründung: Jeder Punkt kann mit 5 anderen verbunden werden: 6 · 5 = 30. Dabei wird jede Strecke doppelt gezählt, also 30 : 2 = 15.
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">19. Primzahl-Term prüfen</div>
+      <div class="points">5 P</div>
+    </div>
+    <p>Setzt man in den Term <span class="formula">n² + n + 17</span> nacheinander natürliche Zahlen ein, erhält man zunächst Primzahlen.</p>
+    <p>a) Prüfe die Aussage für <span class="formula">n = 0, 1, 2, 3</span>. b) Finde ein Beispiel, bei dem der Term keine Primzahl ergibt.</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m19')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s19')">Lösung</button>
+    <div id="s19" class="hidden-solution">
+      a) n=0: 17, n=1: 19, n=2: 23, n=3: 29. Das sind Primzahlen. 
+      b) Zum Beispiel n=16: 16² + 16 + 17 = 256 + 16 + 17 = 289 = 17², also keine Primzahl.
+    </div>
+  </section>
+
+  <section class="task">
+    <div class="task-head">
+      <div class="task-title">20. Abschlussaufgabe: alles kombiniert</div>
+      <div class="points">4 P</div>
+    </div>
+    <p>Die Snowboardausleihe kostet 27 € Grundgebühr. Jeder Tag kostet zusätzlich 22,50 € Leihgebühr.</p>
+    <p>a) Stelle einen Term für die Gesamtkosten nach <span class="formula">t</span> Tagen auf. b) Berechne die Kosten für 4 Tage. c) Erkläre, warum der Term sinnvoll ist.</p>
+    <div class="answer wide-answer"></div>
+    <button class="hint" onclick="openModal('m20')">Lerntipp</button>
+    <button class="solution" onclick="toggleSolution('s20')">Lösung</button>
+    <div id="s20" class="hidden-solution">
+      a) 27 + 22,50t · b) 27 + 22,50 · 4 = 117 € · c) 27 € fallen einmalig an, 22,50 € wird für jeden Tag addiert.
+    </div>
+  </section>
+
+  <h2>Bewertungsvorschlag</h2>
+  <div class="card">
+    <table>
+      <tr><th>Punkte</th><th>Note / Einschätzung</th></tr>
+      <tr><td>54–60</td><td>sehr sicher / sehr gut</td></tr>
+      <tr><td>45–53</td><td>gut vorbereitet</td></tr>
+      <tr><td>36–44</td><td>Grundlagen vorhanden, Fehler gezielt üben</td></tr>
+      <tr><td>unter 36</td><td>noch einmal systematisch wiederholen</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">Checkliste vor der Klassenarbeit</h2>
+    <ul class="checklist">
+      <li>Ich kann Terme vereinfachen und gleiche Variablen zusammenfassen.</li>
+      <li>Ich kann Klammern richtig auflösen, auch bei Minusklammern.</li>
+      <li>Ich kann aus einer Sachsituation einen Term oder eine Gleichung bilden.</li>
+      <li>Ich kann Umfang und Flächeninhalt als Term darstellen.</li>
+      <li>Ich kann entscheiden, ob zwei Terme gleichwertig sind.</li>
+      <li>Ich kann Fehler in Rechnungen finden und erklären.</li>
+      <li>Ich kann Aussagen mit „immer“, „nie“ oder „es kommt darauf an“ begründen.</li>
+    </ul>
+  </div>
+</main>
+
+<div id="modal" class="modal" onclick="modalBackgroundClose(event)">
+  <div class="modal-content">
+    <div class="modal-top">
+      <h3 id="modalTitle">Lerntipp</h3>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
 <script>
-const popups={
-p1:['Einsetzen / Yerine koyma','Değişkenin yerine verilen sayıyı yazarsın. Örnek: 3x−5 için x=2 ise 3·2−5=1. Dikkat: x negatifse işaretlere dikkat et.'],
-p2:['Terme vereinfachen','Aynı tür terimler toplanır: 3x+2x=5x. Sabit sayılar kendi arasında toplanır: 4+1=5. x ile sayı doğrudan toplanmaz: 3x+5 aynı kalır.'],
-p3:['Distributivgesetz ve Minusklammer','a(b+c)=ab+ac. Örnek: 3(x+2)=3x+6. Eksi parantezde içerideki işaretler değişir: −(4x−3)=−4x+3.'],
-p4:['Ausklammern','Ortak çarpanı dışarı alırsın. 9x−15 içinde ortak 3 vardır: 3(3x−5). Kontrol için tekrar parantezi aç.'],
-p5:['Gleichwertige Terme','İki terim her x değeri için aynı sonucu veriyorsa eşdeğerdir. En güvenli yol: ikisini de sadeleştir ve karşılaştır. Tek bir x değeri genelde yeterli kanıt değildir.'],
-p6:['Situation → Term','Sabit miktar + değişen miktar·değişken şeklinde düşün. 20 € sabit + 44 € her saat için: 20+44t. Sonunda birim ve cevap cümlesi yaz.'],
-p7:['Fläche als Term','Karmaşık şekilleri dikdörtgenlere böl. Her dikdörtgen için A = Länge · Breite. Sonra alanları topla ve sadeleştir.'],
-p8:['Umfang als Term','Çevre için dış kenarların tamamını topla. Aynı tür terimleri birleştir: 3x+x+x=5x, 5+3=8.'],
-p9:['Gleichungen lösen','Amaç x’i yalnız bırakmaktır. İki tarafa aynı işlemi uygula. Örnek: 4x+24=184 → −24 → 4x=160 → :4 → x=40.'],
-p10:['Fehler finden','Önce işlem önceliğini kontrol et: Punkt vor Strich, yani çarpma/bölme toplama/çıkarmadan önce yapılır. 100·0=0’dır.'],
-p11:['Immer / nie / manchmal','Genel ifade sorularında farklı örnekler dene. x pozitif, negatif ve 0 olabilir. Doğal sayılar için n, n+1, n+2 gibi genel terim yazmak güçlü kanıttır.']
+const tips = {
+  m1: ["Werte einsetzen", "Ersetze x durch die angegebene Zahl. Danach gilt die normale Reihenfolge: Klammer vor Punkt vor Strich."],
+  m2: ["Terme vereinfachen", "Gleiche Sorten darf man zusammenfassen: x-Terme mit x-Termen, Zahlen mit Zahlen. Achtung bei Minusklammern: −(x − 6) = −x + 6."],
+  m3: ["Tabelle ausfüllen", "Setze jeden x-Wert einzeln in den Term ein. Bei negativen Zahlen besonders auf die Vorzeichen achten."],
+  m4: ["Gleichwertige Terme", "Zwei Terme sind gleichwertig, wenn sie für jeden eingesetzten Wert denselben Wert liefern. Am sichersten: beide Terme vereinfachen und vergleichen."],
+  m5: ["Distributivgesetz", "Beim Ausmultiplizieren wird der Faktor vor der Klammer mit jedem Summanden in der Klammer multipliziert: a(b+c)=ab+ac."],
+  m6: ["Ausklammern", "Suche den gemeinsamen Faktor. Beispiel: 6x+12 = 6(x+2). Ausklammern ist das Gegenteil von Ausmultiplizieren."],
+  m7: ["Sachaufgabe Kostenmodell", "Eine Grundgebühr kommt einmal vor. Ein Preis pro Stunde wird mit der Anzahl der Stunden multipliziert."],
+  m8: ["Startwert plus Zuwachs", "Ein Anfangsbetrag bleibt fest. Der wöchentliche Zuwachs wird mit der Anzahl der Wochen multipliziert."],
+  m9: ["Umfang", "Der Umfang ist die Summe aller Außenkanten. Beim Rechteck gilt: U = 2·Länge + 2·Breite."],
+  m10: ["Flächeninhalt Rechteck", "Beim Rechteck gilt: A = Länge · Breite. Danach kann man die Klammer ausmultiplizieren."],
+  m11: ["Zusammengesetzte Fläche", "Zerlege die Figur in einfache Rechtecke. Berechne die Teilflächen und addiere sie. Hier: A₁ = 8d und A₂ = 2(7−d)."],
+  m12: ["Gleichungen lösen", "Führe auf beiden Seiten dieselbe Umkehroperation aus. Ziel: x steht allein."],
+  m13: ["Gleichung aus Text", "Startgewicht + Zunahme pro Woche · Wochenzahl = Zielgewicht."],
+  m14: ["Fehler finden", "Prüfe jeden Rechenschritt. Besonders häufig: Multiplikation mit 0, Vorzeichenfehler, Klammern falsch aufgelöst."],
+  m15: ["Aussagen begründen", "Nutze entweder eine allgemeine Umformung mit n oder finde ein Gegenbeispiel. Ein Gegenbeispiel reicht, um „gilt immer“ zu widerlegen."],
+  m16: ["Sprachliche Terme", "Achte auf Signalwörter: größer = +, kleiner = −, doppelt = ·2, dreimal = ·3, ein Drittel = :3."],
+  m17: ["Zuordnung und Graph", "Lineare Zuordnung: Startwert + regelmäßiger Zuwachs · Zeit. Für kg und g vorher Einheiten anpassen."],
+  m18: ["Verbindungsstrecken", "Jeder Punkt wird mit allen anderen verbunden. Weil jede Strecke doppelt gezählt wird, teilt man durch 2."],
+  m19: ["Primzahlen prüfen", "Setze Werte ein und prüfe, ob die Zahl nur durch 1 und sich selbst teilbar ist. Ein Gegenbeispiel zeigt, dass es nicht immer gilt."],
+  m20: ["Gesamtkosten", "Grundgebühr einmalig plus Tagespreis mal Anzahl der Tage."]
 };
-function openPop(id){document.getElementById('mtitle').textContent=popups[id][0];document.getElementById('mbody').innerHTML='<p>'+popups[id][1]+'</p>';document.getElementById('modal').classList.add('on')}
-function closePop(){document.getElementById('modal').classList.remove('on')}
-function toggleSolutions(){document.getElementById('exam').classList.toggle('show')}
-document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closePop()});
+
+function openModal(id){
+  const [title, body] = tips[id] || ["Lerntipp", "Kein Tipp vorhanden."];
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalBody").innerHTML = "<p>" + body + "</p>";
+  document.getElementById("modal").style.display = "flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
+function modalBackgroundClose(e){
+  if(e.target.id === "modal") closeModal();
+}
+function toggleSolution(id){
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+function showAllSolutions(){
+  document.querySelectorAll(".hidden-solution").forEach(el => el.style.display = "block");
+}
+function hideAllSolutions(){
+  document.querySelectorAll(".hidden-solution").forEach(el => el.style.display = "none");
+}
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape") closeModal();
+});
 </script>
-</body></html>
+</body>
+</html>
