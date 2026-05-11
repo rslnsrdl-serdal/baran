@@ -1,47 +1,185 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Schwere Probe-Klassenarbeit – Terme und Gleichungen</title>
+<title>5. Klasse Deutschprüfung</title>
 <style>
-:root{--bg:#f4f7fb;--card:#fff;--ink:#172033;--muted:#64748b;--blue:#1d4ed8;--purple:#6d28d9;--green:#15803d;--orange:#f59e0b;--red:#dc2626;--line:#d8e0ee;--soft:#eef4ff}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#f8fbff,#f2edff);color:var(--ink);line-height:1.55}header{background:linear-gradient(135deg,var(--blue),var(--purple));color:white;text-align:center;padding:30px 18px;box-shadow:0 4px 22px rgba(0,0,0,.18)}header h1{margin:0;font-size:30px}header p{margin:8px auto 0;max-width:960px;opacity:.96}main{max-width:1120px;margin:22px auto;padding:0 16px 60px}.card,.task{background:var(--card);border:1px solid var(--line);border-radius:17px;box-shadow:0 2px 14px rgba(23,32,51,.07);padding:17px;margin:14px 0}.info{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}.info div{background:white;border:1px solid var(--line);border-radius:15px;padding:14px}.info b{color:var(--blue)}.toolbar{position:sticky;top:0;z-index:5;background:rgba(244,247,251,.94);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;padding:12px;margin:18px 0;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}button{border:0;border-radius:12px;padding:10px 14px;font-weight:800;cursor:pointer;background:var(--blue);color:white}button.dark{background:#111827}button.light{background:#e5e7eb;color:#111827}button.tip{background:var(--orange);color:#111827}button.sol{background:var(--green)}h2{font-size:23px;margin:30px 0 10px;border-left:8px solid var(--blue);padding-left:12px}.note{color:var(--muted);margin-top:-6px}.task-head{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:10px;margin-bottom:12px}.title{font-size:18px;font-weight:900}.points{background:var(--soft);color:var(--blue);padding:4px 10px;border-radius:999px;font-weight:900;white-space:nowrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.answer{min-height:42px;border-bottom:2px solid #94a3b8;margin:10px 0}.big{min-height:90px}.formula{font-family:"Times New Roman",serif;background:#f8fafc;border:1px solid #e5e7eb;border-radius:6px;padding:2px 6px;display:inline-block}table{width:100%;border-collapse:collapse;background:white;margin:10px 0}th,td{border:1px solid var(--line);padding:9px;text-align:center;vertical-align:middle}th{background:#eef4ff}.svgbox{display:flex;justify-content:center;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:10px;margin:12px 0;overflow-x:auto}.solution{display:none;background:#f0fdf4;border-left:5px solid var(--green);border-radius:12px;padding:12px;margin-top:12px}.modal{display:none;position:fixed;inset:0;background:rgba(15,23,42,.58);z-index:50;align-items:center;justify-content:center;padding:20px}.modal-content{background:white;width:min(850px,96vw);max-height:88vh;overflow:auto;border-radius:18px;padding:22px;box-shadow:0 20px 70px rgba(0,0,0,.35)}.modal-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px}.modal h3{margin:0;color:var(--blue)}.close{background:var(--red);border-radius:50%;width:36px;height:36px;padding:0}.badge{display:inline-block;background:#ede9fe;color:#5b21b6;border-radius:999px;padding:4px 10px;font-weight:800}.warn{background:#fff7ed;border-left:5px solid var(--orange)}@media print{header,.toolbar,button,.modal{display:none!important}body{background:white}main{max-width:none;margin:0}.task,.card{box-shadow:none;break-inside:avoid}.solution{display:none!important}}@media(max-width:760px){.info,.grid2{grid-template-columns:1fr}header h1{font-size:24px}}
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+    background:#f4f4f4;
+}
+.container{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    max-width:1000px;
+    margin:auto;
+}
+h1,h2{
+    text-align:center;
+}
+.question{
+    margin-top:25px;
+    padding:15px;
+    background:#fafafa;
+    border-left:5px solid #444;
+}
+.answer{
+    margin-top:10px;
+}
+input{
+    width:250px;
+    padding:6px;
+}
+table{
+    border-collapse:collapse;
+    width:100%;
+    margin-top:10px;
+}
+td,th{
+    border:1px solid #999;
+    padding:8px;
+}
+.note{
+    background:#fff3cd;
+    padding:10px;
+    border-radius:8px;
+    margin-top:20px;
+}
 </style>
 </head>
 <body>
-<header><h1>Schwere Probe-Klassenarbeit: Terme und Gleichungen</h1><p>Klasse 7 · anspruchsvolle Vorbereitung für eine sehr gute Note · mit Lerntipps, Lösungen und Begründungsaufgaben</p></header>
-<main>
-<div class="info"><div><b>Name:</b><br>________________</div><div><b>Datum:</b><br>________________</div><div><b>Arbeitszeit:</b><br>60–75 Minuten</div><div><b>Punkte:</b><br>80 Punkte</div></div>
-<div class="card warn"><b>Wichtig:</b> Diese Arbeit ist bewusst etwas schwerer als eine normale Klassenarbeit. Ziel ist: sicher rechnen, sauber begründen und schwierige Textaufgaben verstehen.</div>
-<div class="toolbar"><div><button onclick="window.print()">Drucken / PDF speichern</button> <button class="dark" onclick="showAll()">Alle Lösungen anzeigen</button> <button class="light" onclick="hideAll()">Lösungen ausblenden</button></div><span class="badge">Schwerer Übungstest</span></div>
-<h2>Teil A – Sicherer Umgang mit Termen</h2><p class="note">Hier entscheidet sich, ob die Grundlagen wirklich stabil sind.</p>
-<section class="task"><div class="task-head"><div class="title">1. Terme vereinfachen – mit Minusklammern</div><div class="points">12 P</div></div><p>Vereinfache vollständig.</p><div class="grid2"><div>a) <span class="formula">7x − 3 + 4x + 11</span><div class="answer"></div></div><div>b) <span class="formula">5(x − 4) + 2x</span><div class="answer"></div></div><div>c) <span class="formula">−(3x − 8) + 5x</span><div class="answer"></div></div><div>d) <span class="formula">4(2x − 3) − 3(x + 5)</span><div class="answer"></div></div><div>e) <span class="formula">2(3x − 4) − (x − 9)</span><div class="answer"></div></div><div>f) <span class="formula">−2(x − 6) + 3(2x − 1)</span><div class="answer"></div></div></div><button class="tip" onclick="openTip('t1')">Lerntipp</button> <button class="sol" onclick="toggle('s1')">Lösung</button><div id="s1" class="solution">a) 11x + 8 · b) 7x − 20 · c) 2x + 8 · d) 5x − 27 · e) 5x + 1 · f) 4x + 9</div></section>
-<section class="task"><div class="task-head"><div class="title">2. Ausklammern und kontrollieren</div><div class="points">8 P</div></div><p>Klammere möglichst weit aus. Kontrolliere bei zwei Aufgaben durch Ausmultiplizieren.</p><div class="grid2"><div>a) <span class="formula">12x + 18</span><div class="answer"></div></div><div>b) <span class="formula">15x − 25</span><div class="answer"></div></div><div>c) <span class="formula">21x + 14</span><div class="answer"></div></div><div>d) <span class="formula">−8x + 20</span><div class="answer"></div></div></div><button class="tip" onclick="openTip('t2')">Lerntipp</button> <button class="sol" onclick="toggle('s2')">Lösung</button><div id="s2" class="solution">a) 6(2x + 3) · b) 5(3x − 5) · c) 7(3x + 2) · d) −4(2x − 5) oder 4(−2x + 5)</div></section>
-<section class="task"><div class="task-head"><div class="title">3. Gleichwertige Terme – mit Begründung</div><div class="points">10 P</div></div><p>Entscheide, ob die Terme gleichwertig sind. Begründe durch Umformen oder ein Gegenbeispiel.</p><div class="grid2"><div>a) <span class="formula">3(x + 4) − x</span> und <span class="formula">2x + 12</span><div class="answer big"></div></div><div>b) <span class="formula">5 − (x − 2)</span> und <span class="formula">7 − x</span><div class="answer big"></div></div><div>c) <span class="formula">2(x + 3)</span> und <span class="formula">2x + 3</span><div class="answer big"></div></div><div>d) <span class="formula">4x − 2(x − 1)</span> und <span class="formula">2x + 2</span><div class="answer big"></div></div></div><button class="tip" onclick="openTip('t3')">Lerntipp</button> <button class="sol" onclick="toggle('s3')">Lösung</button><div id="s3" class="solution">a) gleichwertig, denn 3x+12−x = 2x+12 · b) gleichwertig, denn 5−x+2 = 7−x · c) nicht gleichwertig, denn 2(x+3)=2x+6 · d) gleichwertig, denn 4x−2x+2 = 2x+2</div></section>
-<h2>Teil B – Tabellen, Muster und Aussagen</h2>
-<section class="task"><div class="task-head"><div class="title">4. Tabelle und Muster erkennen</div><div class="points">8 P</div></div><p>Berechne die Werte des Terms <span class="formula">2x² − 3x + 1</span>.</p><table><tr><th>x</th><td>−2</td><td>−1</td><td>0</td><td>1</td><td>2</td><td>3</td></tr><tr><th>2x² − 3x + 1</th><td></td><td></td><td></td><td></td><td></td><td></td></tr></table><p>Erkläre zusätzlich, warum man bei <span class="formula">x²</span> mit negativen Zahlen vorsichtig sein muss.</p><div class="answer big"></div><button class="tip" onclick="openTip('t4')">Lerntipp</button> <button class="sol" onclick="toggle('s4')">Lösung</button><div id="s4" class="solution">x=−2: 15 · x=−1: 6 · x=0: 1 · x=1: 0 · x=2: 3 · x=3: 10. Wichtig: (−2)² = 4, nicht −4.</div></section>
-<section class="task"><div class="task-head"><div class="title">5. Immer, nie oder es kommt darauf an?</div><div class="points">10 P</div></div><p>Entscheide und begründe kurz.</p><div class="grid2"><div>a) <span class="formula">−4x</span> ist immer negativ.<div class="answer big"></div></div><div>b) Die Summe aus drei aufeinanderfolgenden natürlichen Zahlen ist durch 3 teilbar.<div class="answer big"></div></div><div>c) Die Summe aus vier aufeinanderfolgenden natürlichen Zahlen ist durch 4 teilbar.<div class="answer big"></div></div><div>d) <span class="formula">x²</span> ist nie negativ.<div class="answer big"></div></div></div><button class="tip" onclick="openTip('t5')">Lerntipp</button> <button class="sol" onclick="toggle('s5')">Lösung</button><div id="s5" class="solution">a) Es kommt darauf an. b) Immer: n+(n+1)+(n+2)=3n+3=3(n+1). c) Nie: n+(n+1)+(n+2)+(n+3)=4n+6=4(n+1)+2. d) Immer: Quadrate sind ≥ 0.</div></section>
-<h2>Teil C – Sachaufgaben und Gleichungen</h2>
-<section class="task"><div class="task-head"><div class="title">6. Zahlenrätsel</div><div class="points">6 P</div></div><p>Ich denke mir eine Zahl. Ich multipliziere sie mit 5, subtrahiere 7 und erhalte dasselbe Ergebnis wie beim Doppelten der Zahl plus 14.</p><p>Stelle eine Gleichung auf und löse sie.</p><div class="answer big"></div><button class="tip" onclick="openTip('t6')">Lerntipp</button> <button class="sol" onclick="toggle('s6')">Lösung</button><div id="s6" class="solution">Zahl: x. Gleichung: 5x − 7 = 2x + 14. Dann 3x = 21, also x = 7.</div></section>
-<section class="task"><div class="task-head"><div class="title">7. Zwei Tarife vergleichen</div><div class="points">8 P</div></div><p>Tarif A kostet 18 € Grundgebühr und 6 € pro Stunde. Tarif B kostet keine Grundgebühr, aber 9 € pro Stunde.</p><p>a) Stelle für beide Tarife einen Term auf. b) Für wie viele Stunden sind beide Tarife gleich teuer? c) Welcher Tarif ist bei 5 Stunden günstiger?</p><div class="answer big"></div><button class="tip" onclick="openTip('t7')">Lerntipp</button> <button class="sol" onclick="toggle('s7')">Lösung</button><div id="s7" class="solution">a) A = 18 + 6h, B = 9h. b) 18 + 6h = 9h → 18 = 3h → h = 6. c) Bei 5 h: A=48 €, B=45 €, also Tarif B günstiger.</div></section>
-<section class="task"><div class="task-head"><div class="title">8. Sparziel</div><div class="points">6 P</div></div><p>Baran hat 34 € gespart. Jede Woche spart er weitere 4,50 €. Er möchte ein Trikot für 88 € kaufen.</p><p>Nach wie vielen Wochen hat er genug Geld? Stelle eine Gleichung auf.</p><div class="answer big"></div><button class="tip" onclick="openTip('t8')">Lerntipp</button> <button class="sol" onclick="toggle('s8')">Lösung</button><div id="s8" class="solution">34 + 4,50w = 88 → 4,50w = 54 → w = 12. Nach 12 Wochen hat er genug Geld.</div></section>
-<section class="task"><div class="task-head"><div class="title">9. Gleichungen mit Klammern</div><div class="points">8 P</div></div><p>Löse die Gleichungen.</p><div class="grid2"><div>a) <span class="formula">3(x + 4) = 2x + 19</span><div class="answer"></div></div><div>b) <span class="formula">5x − 2(x − 3) = 21</span><div class="answer"></div></div><div>c) <span class="formula">4(x − 2) + 6 = 2x + 10</span><div class="answer"></div></div><div>d) <span class="formula">7 − (x − 5) = 20</span><div class="answer"></div></div></div><button class="tip" onclick="openTip('t9')">Lerntipp</button> <button class="sol" onclick="toggle('s9')">Lösung</button><div id="s9" class="solution">a) x=7 · b) x=5 · c) x=6 · d) x=−8</div></section>
-<h2>Teil D – Geometrische Terme</h2>
-<section class="task"><div class="task-head"><div class="title">10. Umfang einer zusammengesetzten Figur</div><div class="points">8 P</div></div><p>Stelle einen Term für den Umfang der Figur auf und vereinfache ihn.</p><div class="svgbox"><svg width="560" height="260" viewBox="0 0 560 260"><path d="M90 50 H390 V110 H470 V210 H90 Z" fill="#dbeafe" stroke="#1d4ed8" stroke-width="3"/><text x="220" y="38" font-size="18">x + 8</text><text x="415" y="98" font-size="18">4</text><text x="485" y="165" font-size="18">x</text><text x="250" y="235" font-size="18">2x + 3</text><text x="58" y="140" font-size="18">x + 4</text><text x="405" y="165" font-size="18">?</text></svg></div><p><b>Hinweis:</b> Fehlende Innenkante zuerst aus den anderen Höhen bestimmen. Die Figur ist rechtwinklig.</p><div class="answer big"></div><button class="tip" onclick="openTip('t10')">Lerntipp</button> <button class="sol" onclick="toggle('s10')">Lösung</button><div id="s10" class="solution">Kleine waagerechte Stufe: (2x+3) − (x+8) = x−5. Umfang: (x+8)+4+(x−5)+x+(2x+3)+(x+4)=6x+14.</div></section>
-<section class="task"><div class="task-head"><div class="title">11. Flächeninhalt durch Zerlegen</div><div class="points">8 P</div></div><p>Die Figur besteht aus zwei Rechtecken. Stelle einen Flächenterm auf und vereinfache.</p><div class="svgbox"><svg width="560" height="280" viewBox="0 0 560 280"><path d="M100 60 H430 V210 H250 V120 H100 Z" fill="#c7d2fe" stroke="#4338ca" stroke-width="3"/><line x1="100" y1="45" x2="430" y2="45" stroke="#111827" stroke-width="2"/><text x="248" y="35" font-size="18">12</text><line x1="445" y1="60" x2="445" y2="210" stroke="#111827" stroke-width="2"/><text x="458" y="140" font-size="18">x + 5</text><line x1="85" y1="60" x2="85" y2="120" stroke="#111827" stroke-width="2"/><text x="58" y="96" font-size="18">3</text><line x1="250" y1="230" x2="430" y2="230" stroke="#111827" stroke-width="2"/><text x="330" y="255" font-size="18">x</text></svg></div><div class="answer big"></div><button class="tip" onclick="openTip('t11')">Lerntipp</button> <button class="sol" onclick="toggle('s11')">Lösung</button><div id="s11" class="solution">Rechtes Rechteck: x · (x+5). Oberer linker Streifen: 3 · (12−x). Gesamt: A = x(x+5)+3(12−x)=x²+5x+36−3x=x²+2x+36.</div></section>
-<section class="task"><div class="task-head"><div class="title">12. Unterschiedliche Flächenterme vergleichen</div><div class="points">6 P</div></div><p>Eine Figur hat den Flächeninhalt <span class="formula">A = 8d + 2(7 − d)</span>.</p><p>a) Vereinfache. b) Zeige, dass <span class="formula">14 + 6d</span> gleichwertig ist. c) Berechne den Flächeninhalt für <span class="formula">d = 4</span>.</p><div class="answer big"></div><button class="tip" onclick="openTip('t12')">Lerntipp</button> <button class="sol" onclick="toggle('s12')">Lösung</button><div id="s12" class="solution">a) 8d + 2(7−d)=8d+14−2d=6d+14. b) 6d+14 = 14+6d. c) d=4: 6·4+14=38.</div></section>
-<h2>Teil E – Fehleranalyse und Begründungen</h2>
-<section class="task"><div class="task-head"><div class="title">13. Fehler finden und verbessern</div><div class="points">8 P</div></div><p>In jeder Rechnung steckt ein Fehler. Finde ihn und korrigiere.</p><div class="grid2"><div>a) <span class="formula">−(x − 5) = −x − 5</span><div class="answer big"></div></div><div>b) <span class="formula">3(x + 4) = 3x + 4</span><div class="answer big"></div></div><div>c) <span class="formula">2x + 5x = 7x²</span><div class="answer big"></div></div><div>d) <span class="formula">4 + 2 · 5 = 30</span><div class="answer big"></div></div></div><button class="tip" onclick="openTip('t13')">Lerntipp</button> <button class="sol" onclick="toggle('s13')">Lösung</button><div id="s13" class="solution">a) −(x−5)=−x+5. b) 3(x+4)=3x+12. c) 2x+5x=7x. d) 4+2·5=14.</div></section>
-<section class="task"><div class="task-head"><div class="title">14. Gegenbeispiel finden</div><div class="points">4 P</div></div><p>Widerlege die Aussage durch ein Gegenbeispiel: <b>„Die Terme <span class="formula">x + 4 + x</span> und <span class="formula">4x + 2</span> sind gleichwertig.“</b></p><div class="answer big"></div><button class="tip" onclick="openTip('t14')">Lerntipp</button> <button class="sol" onclick="toggle('s14')">Lösung</button><div id="s14" class="solution">Zum Beispiel x=2: x+4+x=8, aber 4x+2=10. Also nicht gleichwertig.</div></section>
-<h2>Teil F – Bestnoten-Aufgaben</h2>
-<section class="task"><div class="task-head"><div class="title">15. Anspruchsvolle Textaufgabe</div><div class="points">8 P</div></div><p>Für eine Klassenfahrt zahlt jede Person 37 € pro Tag für Unterkunft, 26 € pro Tag für Verpflegung und einmalig 45 € für die Busfahrt.</p><p>a) Stelle einen Term für die Kosten einer Person bei <span class="formula">t</span> Tagen auf. b) Vereinfache. c) Berechne die Kosten für 5 Tage. d) Nach wie vielen Tagen betragen die Kosten 360 €?</p><div class="answer big"></div><button class="tip" onclick="openTip('t15')">Lerntipp</button> <button class="sol" onclick="toggle('s15')">Lösung</button><div id="s15" class="solution">a) 37t + 26t + 45. b) 63t + 45. c) 63·5+45=360 €. d) 63t+45=360 → t=5.</div></section>
-<section class="task"><div class="task-head"><div class="title">16. Verbindungsstrecken allgemein</div><div class="points">6 P</div></div><p>Zwischen allen Punkten werden Verbindungsstrecken gezeichnet.</p><p>a) Wie viele Strecken gibt es bei 7 Punkten? b) Erkläre die Regel mit Worten. c) Gib einen allgemeinen Term für <span class="formula">m</span> Punkte an.</p><div class="answer big"></div><button class="tip" onclick="openTip('t16')">Lerntipp</button> <button class="sol" onclick="toggle('s16')">Lösung</button><div id="s16" class="solution">a) 7·6:2 = 21. b) Jeder Punkt wird mit allen anderen verbunden; jede Strecke wird doppelt gezählt. c) m(m−1)/2.</div></section>
-<div class="card"><h2 style="margin-top:0">Bewertung</h2><table><tr><th>Punkte</th><th>Einschätzung</th></tr><tr><td>72–80</td><td>sehr stark / Bestnoten-Niveau</td></tr><tr><td>62–71</td><td>gut bis sehr gut</td></tr><tr><td>50–61</td><td>solide, aber Fehler gezielt üben</td></tr><tr><td>unter 50</td><td>Grundlagen wiederholen</td></tr></table></div>
-</main>
-<div id="modal" class="modal" onclick="bgClose(event)"><div class="modal-content"><div class="modal-top"><h3 id="modalTitle">Lerntipp</h3><button class="close" onclick="closeTip()">×</button></div><div id="modalBody"></div></div></div>
-<script>
-const tips={t1:['Minusklammer und Distributivgesetz','Erst Klammern auflösen, dann x-Terme und Zahlen getrennt zusammenfassen. Bei einem Minus vor der Klammer ändern sich alle Vorzeichen.'],t2:['Ausklammern','Suche den größten gemeinsamen Faktor. Kontrollieren kannst du, indem du wieder ausmultiplizierst.'],t3:['Gleichwertigkeit','Forme beide Terme um. Wenn exakt derselbe vereinfachte Term entsteht, sind sie gleichwertig.'],t4:['Quadrate negativer Zahlen','Bei x² wird x mit sich selbst multipliziert. Beispiel: (−2)² = 4.'],t5:['Immer/nie/es kommt darauf an','Nutze allgemeine Zahlen n, n+1, n+2 oder Gegenbeispiele.'],t6:['Zahlenrätsel','Übersetze jeden Satzteil in Mathematik. „Dasselbe Ergebnis wie“ bedeutet Gleichheitszeichen.'],t7:['Tarife vergleichen','Für jeden Tarif einen Term bilden. Gleich teuer bedeutet: beide Terme gleichsetzen.'],t8:['Sparziel','Startbetrag plus wöchentlicher Betrag mal Wochenzahl. Das Ziel steht rechts in der Gleichung.'],t9:['Gleichungen mit Klammern','Erst Klammern sauber auflösen. Dann x-Terme auf eine Seite, Zahlen auf die andere.'],t10:['Umfang zusammengesetzter Figuren','Nur Außenkanten zählen. Fehlende Strecken über Gesamtbreite oder Gesamthöhe bestimmen.'],t11:['Fläche zerlegen','Teile die Figur in Rechtecke. Bei nicht beschrifteten Längen oft mit Differenzen arbeiten.'],t12:['Gleichwertige Flächenterme','Erst ausmultiplizieren, dann zusammenfassen. Reihenfolge der Summanden ist egal.'],t13:['Typische Fehler','Prüfe Vorzeichen, Klammern, Punkt-vor-Strich und ob x+x wirklich x² wird. Nein: x+x=2x.'],t14:['Gegenbeispiel','Ein Gegenbeispiel muss unterschiedliche Ergebnisse liefern. Teste lieber x=2 oder x=3.'],t15:['Textaufgabe Kosten','Tägliche Kosten werden mit t multipliziert. Einmalige Kosten werden nur addiert.'],t16:['Verbindungsstrecken','m Punkte: Jeder Punkt hat m−1 Partner. Dadurch wird doppelt gezählt, deshalb durch 2 teilen.']};
-function openTip(id){const a=tips[id]||['Lerntipp','Kein Tipp vorhanden.'];document.getElementById('modalTitle').textContent=a[0];document.getElementById('modalBody').innerHTML='<p>'+a[1]+'</p>';document.getElementById('modal').style.display='flex'}function closeTip(){document.getElementById('modal').style.display='none'}function bgClose(e){if(e.target.id==='modal')closeTip()}function toggle(id){const e=document.getElementById(id);e.style.display=e.style.display==='block'?'none':'block'}function showAll(){document.querySelectorAll('.solution').forEach(e=>e.style.display='block')}function hideAll(){document.querySelectorAll('.solution').forEach(e=>e.style.display='none')}document.addEventListener('keydown',e=>{if(e.key==='Escape')closeTip()});
-</script>
+<div class="container">
+
+<h1>Deutschprüfung – 5. Klasse</h1>
+<h2>Themen:</h2>
+
+<ul>
+<li>Subjekt</li>
+<li>Prädikat</li>
+<li>Akkusativobjekt</li>
+<li>Dativobjekt</li>
+<li>Adverbiale Bestimmungen</li>
+<li>Umstellprobe</li>
+</ul>
+
+<div class="note">
+<b>Name:</b> _________________________ <br><br>
+<b>Datum:</b> _________________________
+</div>
+
+<h2>Teil A – Bestimme die Satzglieder</h2>
+
+<div class="question">
+<b>1.</b> Der Junge spielt heute Fußball.
+<table>
+<tr><th>Gesucht</th><th>Antwort</th></tr>
+<tr><td>Subjekt</td><td>__________________</td></tr>
+<tr><td>Prädikat</td><td>__________________</td></tr>
+<tr><td>Adverbiale Bestimmung</td><td>__________________</td></tr>
+<tr><td>Akkusativobjekt</td><td>__________________</td></tr>
+</table>
+</div>
+
+<div class="question">
+<b>2.</b> Die Mutter gibt dem Kind einen Ball.
+<table>
+<tr><th>Gesucht</th><th>Antwort</th></tr>
+<tr><td>Subjekt</td><td>__________________</td></tr>
+<tr><td>Prädikat</td><td>__________________</td></tr>
+<tr><td>Dativobjekt</td><td>__________________</td></tr>
+<tr><td>Akkusativobjekt</td><td>__________________</td></tr>
+</table>
+</div>
+
+<div class="question">
+<b>3.</b> Morgen fährt Ali mit dem Bus zur Schule.
+<table>
+<tr><th>Gesucht</th><th>Antwort</th></tr>
+<tr><td>Adverbiale Bestimmung (Zeit)</td><td>__________________</td></tr>
+<tr><td>Prädikat</td><td>__________________</td></tr>
+<tr><td>Subjekt</td><td>__________________</td></tr>
+</table>
+</div>
+
+<h2>Teil B – Akkusativ oder Dativ?</h2>
+
+<div class="question">
+<b>4.</b> Schreibe: Akkusativ oder Dativ
+<table>
+<tr><th>Satz</th><th>Antwort</th></tr>
+<tr><td>Ich sehe den Hund.</td><td>__________________</td></tr>
+<tr><td>Er hilft dem Lehrer.</td><td>__________________</td></tr>
+<tr><td>Wir kaufen einen Computer.</td><td>__________________</td></tr>
+<tr><td>Sie gibt der Oma Blumen.</td><td>__________________</td></tr>
+</table>
+</div>
+
+<h2>Teil C – Umstellprobe</h2>
+
+<div class="question">
+<b>5.</b> Stelle die Sätze um.
+<br><br>
+a) Ich spiele morgen Fußball.
+<br><br>
+______________________________________________
+<br><br>
+b) Der Lehrer erklärt heute die Aufgabe.
+<br><br>
+______________________________________________
+</div>
+
+<h2>Teil D – Multiple Choice</h2>
+
+<div class="question">
+<b>6.</b> Was ist das Prädikat?
+<br><br>
+Die Katze schläft auf dem Sofa.
+<br><br>
+□ Die Katze <br>
+□ schläft <br>
+□ auf dem Sofa
+</div>
+
+<div class="question">
+<b>7.</b> Was ist das Subjekt?
+<br><br>
+Ali trinkt Wasser.
+<br><br>
+□ trinkt <br>
+□ Wasser <br>
+□ Ali
+</div>
+
+<div class="question">
+<b>8.</b> Was ist das Dativobjekt?
+<br><br>
+Der Vater schenkt dem Kind ein Fahrrad.
+<br><br>
+□ dem Kind <br>
+□ ein Fahrrad <br>
+□ schenkt
+</div>
+
+<h2>Teil E – Bonusfrage</h2>
+
+<div class="question">
+<b>9.</b> Schreibe einen eigenen Satz mit:
+<ul>
+<li>Subjekt</li>
+<li>Prädikat</li>
+<li>Akkusativobjekt</li>
+</ul>
+
+_____________________________________________________
+<br><br>
+_____________________________________________________
+</div>
+
+<h2>Viel Erfolg!</h2>
+
+</div>
 </body>
 </html>
