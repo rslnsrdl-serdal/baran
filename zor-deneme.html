@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baran – Mathematik Prüfungssimulation 2</title>
+<style>
+:root{--ink:#172033;--muted:#667085;--bg:#f3f6fb;--paper:#fff;--accent:#7c3aed;--accent2:#0f766e;--line:#d7deea;--soft:#f5f3ff;--warn:#fff7ed;--ok:#166534;--bad:#b91c1c}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.5}
+.page{max-width:1000px;margin:28px auto;background:var(--paper);border-radius:20px;overflow:hidden;box-shadow:0 15px 45px rgba(16,24,40,.12)}
+header{padding:34px 40px;background:linear-gradient(135deg,#f5f3ff,#ecfeff);border-bottom:1px solid var(--line)}
+.eyebrow{font-weight:900;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{font-size:clamp(30px,5vw,48px);margin:.3rem 0 .5rem;line-height:1.08}.sub{color:var(--muted);font-size:17px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}.meta div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+.meta b{display:block;font-size:12px;color:var(--muted)}
+.toolbar{position:sticky;top:0;z-index:4;display:flex;gap:9px;flex-wrap:wrap;padding:14px 40px;background:rgba(255,255,255,.96);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+button,.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}.primary{background:var(--accent);color:white}.secondary{background:#eef2f7;color:var(--ink)}
+main{padding:12px 40px 42px}.notice{padding:14px 16px;margin:20px 0;border-left:5px solid #f59e0b;background:var(--warn);border-radius:10px}
+.section{margin-top:28px;border:1px solid var(--line);border-radius:16px;overflow:hidden}.st{display:flex;justify-content:space-between;gap:16px;padding:17px 20px;background:#f8fafc;border-bottom:1px solid var(--line)}.st h2{margin:0;font-size:20px}.pts{font-weight:900;color:var(--accent)}
+.q{padding:18px 20px;border-bottom:1px solid #eef2f6}.q:last-child{border-bottom:0}.q h3{font-size:16px;margin:0 0 10px}.q p{margin:7px 0}
+input[type=text],textarea{width:100%;border:1px solid #b9c3d2;border-radius:9px;padding:10px;font:inherit;background:#fff}.short{width:130px!important;display:inline-block}textarea{min-height:86px;resize:vertical}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:9px}.choice{border:1px solid var(--line);padding:10px 12px;border-radius:10px}
+.solution{display:none;margin-top:12px;padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px}.solution.show{display:block}
+.good{outline:2px solid #22c55e!important;background:#f0fdf4!important}.bad{outline:2px solid #ef4444!important;background:#fff1f2!important}
+table{width:100%;border-collapse:collapse;margin:12px 0}th,td{border:1px solid var(--line);padding:10px;text-align:left}th{background:#f8fafc}
+.score{margin-top:28px;border:2px solid var(--accent);border-radius:14px;padding:18px;background:var(--soft)}.small{font-size:13px;color:var(--muted)}
+.math{font-family:"Times New Roman",serif;font-size:1.08em}
+@media(max-width:700px){.page{margin:0;border-radius:0}.meta{grid-template-columns:1fr 1fr}header,.toolbar,main{padding-left:18px;padding-right:18px}.choices{grid-template-columns:1fr}}
+@media print{body{background:#fff}.page{box-shadow:none;margin:0;max-width:none}.toolbar,.solution,.no-print{display:none!important}.section,.q{break-inside:avoid}header{background:#fff}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div class="eyebrow">Baran · 8. Klasse · Anspruchsvolle Prüfungssimulation</div>
+  <h1>Mathematik – Probearbeit 2</h1>
+  <div class="sub">Schwieriger als die erste Version · prüfungsnah · mit Begründungen und Transferaufgaben</div>
+  <div class="meta">
+    <div><b>Zeit</b>75 Minuten</div><div><b>Gesamt</b>100 Punkte</div><div><b>Ziel</b>90+ Punkte</div><div><b>Hilfsmittel</b>Zirkel · Lineal · Geodreieck</div>
+  </div>
+</header>
+
+<div class="toolbar no-print">
+  <button class="primary" onclick="checkAuto()">Automatisch prüfen</button>
+  <button class="secondary" onclick="toggleSolutions()">Lösungen zeigen/verbergen</button>
+  <button class="secondary" onclick="window.print()">Drucken / PDF</button>
+  <a class="btn secondary" href="index.html">← Probearbeit 1</a>
+</div>
+
+<main>
+<div class="notice"><b>Prüfungsregel:</b> Bei „begründe“ muss der mathematische Satz genannt werden. Bei Konstruktionen zählen Planfigur, richtige Reihenfolge, saubere Beschriftung und Begründung der Eindeutigkeit.</div>
+
+<section class="section">
+<div class="st"><h2>Teil A – Winkel sicher beherrschen</h2><span class="pts">26 Punkte</span></div>
+
+<div class="q">
+<h3>1. Schnittpunkt – mehrere Winkel ableiten <span class="small">(6 P)</span></h3>
+<p>Zwei Geraden schneiden sich. Ein Winkel beträgt 37°. Bestimme die drei übrigen Winkel.</p>
+<p>Gegenüberliegender Winkel: <input class="short auto" data-answer="37|37°" type="text">°</p>
+<p>Die beiden Nebenwinkel: <input class="short auto" data-answer="143|143°" type="text">° und <input class="short auto" data-answer="143|143°" type="text">°</p>
+<p>Begründe mit den Fachbegriffen:</p><textarea></textarea>
+<div class="solution"><b>Lösung:</b> Scheitelwinkel sind gleich groß: 37°. Nebenwinkel ergänzen sich zu 180°: 180°−37°=143°.</div>
+</div>
+
+<div class="q">
+<h3>2. Parallele Geraden – Winkelkette <span class="small">(7 P)</span></h3>
+<p>g ∥ h. Ein Transversal bildet an g einen Winkel von 124°. Bestimme einen zugehörigen spitzen Stufenwinkel und einen spitzen Wechselwinkel.</p>
+<p>Spitzer Stufenwinkel: <input class="short auto" data-answer="56|56°" type="text">°</p>
+<p>Spitzer Wechselwinkel: <input class="short auto" data-answer="56|56°" type="text">°</p>
+<p>Erkläre, warum du zuerst 180°−124° rechnest.</p><textarea></textarea>
+<div class="solution"><b>Lösung:</b> Der Nebenwinkel zu 124° ist 56°. Entsprechende Stufen- und Wechselwinkel an parallelen Geraden sind gleich groß.</div>
+</div>
+
+<div class="q">
+<h3>3. Dreieck mit Außenwinkel <span class="small">(7 P)</span></h3>
+<p>In einem Dreieck gilt α = 48°. Der Außenwinkel am Punkt C beträgt 127°. Bestimme den Innenwinkel γ und anschließend β.</p>
+<p>γ = <input class="short auto" data-answer="53|53°" type="text">°</p>
+<p>β = <input class="short auto" data-answer="79|79°" type="text">°</p>
+<div class="solution"><b>Lösung:</b> γ=180°−127°=53°. Dann β=180°−48°−53°=79°.</div>
+</div>
+
+<div class="q">
+<h3>4. Vieleck rückwärts <span class="small">(6 P)</span></h3>
+<p>Ein Vieleck hat eine Innenwinkelsumme von 1260°. Wie viele Ecken hat es?</p>
+<p>n = <input class="short auto" data-answer="9" type="text"></p>
+<p>Zeige deinen Rechenweg.</p><textarea></textarea>
+<div class="solution"><b>Lösung:</b> (n−2)·180°=1260° ⇒ n−2=7 ⇒ n=9. Es ist ein Neuneck.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="st"><h2>Teil B – Dreiecke konstruieren & Kongruenz</h2><span class="pts">32 Punkte</span></div>
+
+<div class="q">
+<h3>5. Konstruktion mit Ssw <span class="small">(10 P)</span></h3>
+<p>Konstruiere ABC mit <b>a=7 cm</b>, <b>c=5 cm</b>, <b>α=45°</b>. Beschreibe das Vorgehen vollständig.</p>
+<textarea placeholder="Planfigur, AB=c, Winkel α, Kreis um B mit Radius a, Schnittpunkt ..."></textarea>
+<p>Ist die Konstruktion eindeutig? Begründe.</p>
+<textarea></textarea>
+<div class="solution"><b>Musterlösung:</b> AB=c=5 cm zeichnen. In A α=45° abtragen. Um B einen Kreis mit Radius a=7 cm zeichnen. Schnittpunkt mit dem Winkelschenkel ist C. Da α der längeren gegebenen Seite a gegenüberliegt, gilt der Kongruenzsatz Ssw; die Konstruktion ist eindeutig (bis auf Spiegelung).</div>
+</div>
+
+<div class="q">
+<h3>6. Achtung: nicht eindeutige Konstruktion <span class="small">(8 P)</span></h3>
+<p>Gegeben sind a=5 cm, c=6 cm und α=40°. Ist das Dreieck eindeutig bestimmt?</p>
+<div class="choices">
+<label class="choice"><input type="radio" name="q6" value="ja"> Ja, immer eindeutig</label>
+<label class="choice"><input type="radio" name="q6" value="nein" data-correct="true"> Nein, es können zwei Dreiecke entstehen</label>
+</div>
+<p>Begründe geometrisch mit Kreis/Winkelschenkel.</p><textarea></textarea>
+<div class="solution"><b>Lösung:</b> Nicht eindeutig. Der Kreis um B mit Radius a=5 cm kann den 40°-Winkelschenkel in zwei Punkten schneiden. Genau deshalb braucht Ssw die Bedingung, dass der gegebene Winkel der längeren gegebenen Seite gegenüberliegt.</div>
+</div>
+
+<div class="q">
+<h3>7. Kongruenz – genug Information oder nicht? <span class="small">(8 P)</span></h3>
+<table>
+<tr><th>Angaben</th><th>Antwort</th></tr>
+<tr><td>4 cm, 5 cm, 6 cm</td><td><input class="auto" data-answer="sss" type="text" placeholder="Kongruenzsatz"></td></tr>
+<tr><td>4 cm, 7 cm, eingeschlossener Winkel 55°</td><td><input class="auto" data-answer="sws" type="text"></td></tr>
+<tr><td>eine Seite 5 cm, anliegende Winkel 40° und 70°</td><td><input class="auto" data-answer="wsw" type="text"></td></tr>
+<tr><td>nur drei Winkel 40°, 60°, 80°</td><td><input class="auto" data-answer="nicht eindeutig|nein|kein kongruenzsatz" type="text"></td></tr>
+</table>
+<div class="solution"><b>Lösung:</b> SSS · SWS · WSW · nicht eindeutig. Drei Winkel bestimmen nur die Form, nicht die Größe.</div>
+</div>
+
+<div class="q">
+<h3>8. Fehler finden <span class="small">(6 P)</span></h3>
+<p>Ein Schüler sagt: „Zwei Dreiecke mit denselben drei Winkeln sind kongruent.“ Erkläre genau, warum das falsch ist.</p>
+<textarea></textarea>
+<div class="solution"><b>Musterlösung:</b> Gleiche drei Winkel garantieren nur ähnliche Dreiecke. Ein Dreieck kann größer oder kleiner sein. Für Kongruenz muss auch eine passende Seitenlänge festgelegt sein.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="st"><h2>Teil C – Anwendungen</h2><span class="pts">16 Punkte</span></div>
+
+<div class="q">
+<h3>9. Schatzkarte – Winkel zwischen Peilrichtungen <span class="small">(8 P)</span></h3>
+<p>Vom Punkt K führt eine Peilung N33°O zum Schatz. Von Punkt B führt eine Peilung N45°W zum Schatz. Die Nordrichtungen sind parallel.</p>
+<p>Welcher Winkel liegt zwischen den beiden Peilrichtungen?</p>
+<p><input class="short auto" data-answer="78|78°" type="text">°</p>
+<p>Begründe:</p><textarea></textarea>
+<div class="solution"><b>Lösung:</b> Die eine Richtung liegt 33° östlich, die andere 45° westlich von Nord. Daher beträgt der eingeschlossene Winkel 33°+45°=78°.</div>
+</div>
+
+<div class="q">
+<h3>10. Planfigur statt blind rechnen <span class="small">(8 P)</span></h3>
+<p>Eine Position P soll gleichzeitig 4 cm von A entfernt sein und auf einem Strahl liegen, der in A einen Winkel von 52° zu AB bildet. Beschreibe die Konstruktion und erkläre, warum eine Planfigur hilfreich ist.</p>
+<textarea></textarea>
+<div class="solution"><b>Musterlösung:</b> In A einen 52°-Strahl zu AB zeichnen. Kreis um A mit Radius 4 cm zeichnen. Schnittpunkt des Kreises mit dem Strahl ist P. Die Planfigur zeigt vor der Konstruktion, welche Angaben zu welchem Punkt, Winkel und Abstand gehören.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="st"><h2>Teil D – Wahrscheinlichkeit auf Prüfungsniveau</h2><span class="pts">26 Punkte</span></div>
+
+<div class="q">
+<h3>11. Relative Häufigkeit vergleichen <span class="small">(6 P)</span></h3>
+<p>Nach 500 Versuchen trat ein Ereignis 232-mal auf. Nach 2100 Versuchen insgesamt 968-mal.</p>
+<p>500 Versuche: <input class="short auto" data-answer="46.4|46,4|46.4%|46,4%" type="text"> %</p>
+<p>2100 Versuche: <input class="short auto" data-answer="46.1|46,1|46.1%|46,1%" type="text"> %</p>
+<p>Welche Schätzung würdest du eher verwenden und warum?</p><textarea></textarea>
+<div class="solution"><b>Lösung:</b> 232/500=46,4 %, 968/2100≈46,1 %. Die Schätzung aus 2100 Versuchen ist verlässlicher, weil eine größere Versuchszahl typischerweise stabilere relative Häufigkeiten liefert.</div>
+</div>
+
+<div class="q">
+<h3>12. Erwartete Häufigkeit – vorwärts und rückwärts <span class="small">(6 P)</span></h3>
+<p>a) P(A)=42 %, n=250. Erwartete Häufigkeit:</p>
+<p><input class="short auto" data-answer="105" type="text">-mal</p>
+<p>b) Ein Ereignis wird bei 120 Versuchen etwa 54-mal erwartet. Wie groß ist P(A)?</p>
+<p><input class="short auto" data-answer="45|45%|0.45|0,45" type="text"> %</p>
+<div class="solution"><b>Lösung:</b> a) 250·0,42=105. b) 54/120=0,45=45 %.</div>
+</div>
+
+<div class="q">
+<h3>13. Laplace – „oder“ richtig zählen <span class="small">(8 P)</span></h3>
+<p>Ein fairer 30-seitiger Würfel zeigt 1 bis 30. Gesucht ist: „durch 3 teilbar ODER größer als 25“.</p>
+<p>Anzahl günstiger Ergebnisse: <input class="short auto" data-answer="13" type="text"></p>
+<p>Wahrscheinlichkeit: <input class="short auto" data-answer="13/30" type="text"></p>
+<p>Erkläre, warum man nicht einfach 10+5=15 günstige Ergebnisse zählen darf.</p><textarea></textarea>
+<div class="solution"><b>Lösung:</b> Vielfache von 3: 10 Stück. Zahlen >25: 5 Stück. 27 und 30 gehören zu beiden Mengen und würden doppelt gezählt. Daher 10+5−2=13 ⇒ P=13/30.</div>
+</div>
+
+<div class="q">
+<h3>14. Gegenereignis mit Transfer <span class="small">(6 P)</span></h3>
+<p>P(A)=0,72. Bestimme P(Ā) als Dezimalzahl und Prozentzahl.</p>
+<p>Dezimalzahl: <input class="short auto" data-answer="0.28|0,28" type="text"></p>
+<p>Prozent: <input class="short auto" data-answer="28|28%" type="text"> %</p>
+<div class="solution"><b>Lösung:</b> 1−0,72=0,28=28 %.</div>
+</div>
+</section>
+
+<div class="score no-print">
+<strong>Automatische Kontrolle</strong>
+<p id="scoreText">Noch nicht geprüft. Begründungen, Konstruktionen und Freitextaufgaben werden zusätzlich manuell kontrolliert.</p>
+</div>
+
+<div class="notice"><b>Lernziel für die Bestnote:</b> Nicht nur richtige Zahlen liefern. Baran soll bei jedem Geometrieschritt den passenden Fachbegriff nennen können und bei Wahrscheinlichkeit zwischen absoluter Häufigkeit, relativer Häufigkeit, Schätzung und theoretischer Wahrscheinlichkeit sauber unterscheiden.</div>
+</main>
+</div>
+
+<script>
+function norm(v){return v.trim().toLowerCase().replace(/\s+/g,'').replace(/,/g,'.').replace(/°/g,'')}
+function checkAuto(){
+ let c=0,t=0;
+ document.querySelectorAll('.auto').forEach(el=>{t++;const g=norm(el.value);const a=(el.dataset.answer||'').split('|').map(norm);const ok=a.includes(g);el.classList.toggle('good',ok);el.classList.toggle('bad',!ok&&g.length>0);if(ok)c++});
+ document.querySelectorAll('input[type=radio][data-correct=true]').forEach(el=>{t++;const g=document.querySelector('input[name="'+el.name+'"]:checked');const ok=g===el;document.querySelectorAll('input[name="'+el.name+'"]').forEach(r=>r.closest('.choice')?.classList.remove('good','bad'));if(g){g.closest('.choice')?.classList.add(ok?'good':'bad');if(ok)c++}});
+ const p=t?Math.round(c/t*100):0;document.getElementById('scoreText').innerHTML='Automatisch prüfbare Felder: <b>'+c+' / '+t+'</b> richtig ('+p+' %). Freitext ve gerekçeleri çözüm anahtarıyla ayrıca kontrol edin.';
+ window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+}
+function toggleSolutions(){document.querySelectorAll('.solution').forEach(s=>s.classList.toggle('show'))}
+</script>
+</body>
+</html>
