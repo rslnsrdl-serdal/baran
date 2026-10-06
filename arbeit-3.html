@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baran – Mathematik Klassenarbeit 3</title>
+<style>
+:root{--ink:#182230;--muted:#667085;--bg:#f4f7fb;--paper:#fff;--accent:#2563eb;--accent2:#0f766e;--line:#d8e0eb;--soft:#eff6ff;--warn:#fff7ed}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif;line-height:1.5}
+.page{max-width:980px;margin:28px auto;background:var(--paper);border-radius:20px;overflow:hidden;box-shadow:0 15px 45px rgba(15,23,42,.11)}
+header{padding:34px 40px;background:linear-gradient(135deg,#eff6ff,#ecfeff);border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+h1{margin:.35rem 0 .45rem;font-size:clamp(30px,5vw,46px);line-height:1.08}
+.sub{color:var(--muted);font-size:17px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
+.meta div{background:white;border:1px solid var(--line);border-radius:12px;padding:12px}
+.meta b{display:block;font-size:12px;color:var(--muted)}
+.toolbar{position:sticky;top:0;z-index:4;display:flex;gap:9px;flex-wrap:wrap;padding:14px 40px;background:rgba(255,255,255,.96);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+button,.btn{border:0;border-radius:10px;padding:10px 14px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:var(--accent);color:white}.secondary{background:#eef2f6;color:var(--ink)}
+main{padding:12px 40px 42px}
+.notice{padding:14px 16px;margin:20px 0;border-left:5px solid #f59e0b;background:var(--warn);border-radius:10px}
+.section{margin-top:28px;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.st{display:flex;justify-content:space-between;gap:16px;padding:17px 20px;background:#f8fafc;border-bottom:1px solid var(--line)}
+.st h2{margin:0;font-size:20px}.pts{font-weight:900;color:var(--accent)}
+.q{padding:18px 20px;border-bottom:1px solid #eef2f6}.q:last-child{border-bottom:0}
+.q h3{font-size:16px;margin:0 0 10px}.q p{margin:7px 0}
+input[type=text],textarea{width:100%;border:1px solid #b8c2d0;border-radius:9px;padding:10px;font:inherit;background:white}
+.short{width:130px!important;display:inline-block}
+textarea{min-height:82px;resize:vertical}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:9px}
+.choice{border:1px solid var(--line);padding:10px 12px;border-radius:10px}
+.solution{display:none;margin-top:12px;padding:12px 14px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px}
+.solution.show{display:block}
+.good{outline:2px solid #22c55e!important;background:#f0fdf4!important}
+.bad{outline:2px solid #ef4444!important;background:#fff1f2!important}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{border:1px solid var(--line);padding:10px;text-align:left}
+th{background:#f8fafc}
+.score{margin-top:28px;border:2px solid var(--accent);border-radius:14px;padding:18px;background:var(--soft)}
+.small{font-size:13px;color:var(--muted)}
+.math{font-family:"Times New Roman",serif;font-size:1.08em}
+@media(max-width:700px){.page{margin:0;border-radius:0}.meta{grid-template-columns:1fr 1fr}header,.toolbar,main{padding-left:18px;padding-right:18px}.choices{grid-template-columns:1fr}}
+@media print{body{background:#fff}.page{box-shadow:none;margin:0;max-width:none}.toolbar,.solution,.no-print{display:none!important}.section,.q{break-inside:avoid}header{background:#fff}}
+</style>
+</head>
+<body>
+<div class="page">
+<header>
+  <div class="eyebrow">Baran · 8. Klasse · Prüfungsvorbereitung</div>
+  <h1>Mathematik – Klassenarbeit 3</h1>
+  <div class="sub">Mittleres Niveau: schwieriger als Probearbeit 1, leichter als die schwere Version</div>
+  <div class="meta">
+    <div><b>Zeit</b>65 Minuten</div>
+    <div><b>Gesamt</b>100 Punkte</div>
+    <div><b>Ziel</b>85+ Punkte</div>
+    <div><b>Hilfsmittel</b>Zirkel · Lineal · Geodreieck</div>
+  </div>
+</header>
+
+<div class="toolbar no-print">
+  <button class="primary" onclick="checkAuto()">Automatisch prüfen</button>
+  <button class="secondary" onclick="toggleSolutions()">Lösungen zeigen/verbergen</button>
+  <button class="secondary" onclick="window.print()">Drucken / PDF</button>
+  <a class="btn secondary" href="index.html">Probearbeit 1</a>
+  <a class="btn secondary" href="zor-deneme.html">Schwere Probearbeit</a>
+</div>
+
+<main>
+<div class="notice"><b>Hinweis:</b> Rechenweg und Begründung gehören zur Lösung. Bei Winkelaufgaben den passenden Fachbegriff nennen; bei Konstruktionen sauber beschriften.</div>
+
+<section class="section">
+<div class="st"><h2>Teil A – Winkel und Winkelsummen</h2><span class="pts">30 Punkte</span></div>
+
+<div class="q">
+<h3>1. Scheitel- und Nebenwinkel <span class="small">(8 P)</span></h3>
+<p>Zwei Geraden schneiden sich. Ein Winkel beträgt 64°.</p>
+<p>a) Der Scheitelwinkel beträgt <input class="short auto" data-answer="64|64°" type="text">°.</p>
+<p>b) Jeder Nebenwinkel beträgt <input class="short auto" data-answer="116|116°" type="text">°.</p>
+<p>c) Begründe mit den Fachbegriffen.</p>
+<textarea></textarea>
+<div class="solution"><b>Lösung:</b> Scheitelwinkel sind gleich groß: 64°. Nebenwinkel ergänzen sich zu 180°: 180°−64°=116°.</div>
+</div>
+
+<div class="q">
+<h3>2. Parallele Geraden <span class="small">(8 P)</span></h3>
+<p>Die Geraden g und h sind parallel. Ein Winkel an g beträgt 72°.</p>
+<p>a) Der entsprechende Stufenwinkel beträgt <input class="short auto" data-answer="72|72°" type="text">°.</p>
+<p>b) Ein zugehöriger stumpfer Nebenwinkel beträgt <input class="short auto" data-answer="108|108°" type="text">°.</p>
+<p>c) Erkläre kurz, warum.</p>
+<textarea></textarea>
+<div class="solution"><b>Lösung:</b> Stufenwinkel an parallelen Geraden sind gleich groß. Der Nebenwinkel ergänzt 72° auf 180°: 108°.</div>
+</div>
+
+<div class="q">
+<h3>3. Dreieck und Viereck <span class="small">(8 P)</span></h3>
+<p>a) In einem Dreieck gilt α=47° und β=68°. Bestimme γ.</p>
+<p>γ = <input class="short auto" data-answer="65|65°" type="text">°</p>
+<p>b) Ein Viereck hat die Winkel 95°, 80°, 105° und x. Bestimme x.</p>
+<p>x = <input class="short auto" data-answer="80|80°" type="text">°</p>
+<div class="solution"><b>Lösung:</b> Dreieck: 180°−47°−68°=65°. Viereck: 360°−95°−80°−105°=80°.</div>
+</div>
+
+<div class="q">
+<h3>4. Innenwinkelsumme eines Vielecks <span class="small">(6 P)</span></h3>
+<p>Berechne die Innenwinkelsumme eines Siebenecks.</p>
+<p><input class="short auto" data-answer="900|900°" type="text">°</p>
+<p>Schreibe die Formel und den Rechenweg.</p>
+<textarea></textarea>
+<div class="solution"><b>Lösung:</b> (n−2)·180° = (7−2)·180° = 900°.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="st"><h2>Teil B – Dreiecke konstruieren und Kongruenz</h2><span class="pts">30 Punkte</span></div>
+
+<div class="q">
+<h3>5. Dreieck konstruieren <span class="small">(12 P)</span></h3>
+<p>Konstruiere ein Dreieck ABC mit <b>a=6 cm</b>, <b>c=4 cm</b> und <b>α=40°</b>.</p>
+<p>Beschreibe dein Vorgehen:</p>
+<textarea placeholder="Planfigur, AB=c, Winkel α, Kreis/Bogen um B mit Radius a ..."></textarea>
+<p>Welche Strecke ist 6 cm lang?</p>
+<div class="choices">
+<label class="choice"><input type="radio" name="q5" value="ab"> AB</label>
+<label class="choice"><input type="radio" name="q5" value="bc" data-correct="true"> BC</label>
+<label class="choice"><input type="radio" name="q5" value="ac"> AC</label>
+<label class="choice"><input type="radio" name="q5" value="egal"> irgendeine Seite</label>
+</div>
+<div class="solution"><b>Lösung:</b> AB=c=4 cm zeichnen. In A α=40° abtragen. Um B einen Kreis/Bogen mit Radius a=6 cm zeichnen. Der Schnittpunkt mit dem Winkelschenkel ist C. Damit ist BC=a=6 cm.</div>
+</div>
+
+<div class="q">
+<h3>6. Kongruenzsätze <span class="small">(10 P)</span></h3>
+<table>
+<tr><th>Angaben</th><th>Kongruenzsatz</th></tr>
+<tr><td>drei Seiten</td><td><input class="auto" data-answer="sss" type="text"></td></tr>
+<tr><td>zwei Seiten und der eingeschlossene Winkel</td><td><input class="auto" data-answer="sws" type="text"></td></tr>
+<tr><td>eine Seite und die beiden anliegenden Winkel</td><td><input class="auto" data-answer="wsw" type="text"></td></tr>
+<tr><td>zwei Seiten und Winkel gegenüber der längeren Seite</td><td><input class="auto" data-answer="ssw|Ssw|ssw" type="text"></td></tr>
+</table>
+<div class="solution"><b>Lösung:</b> SSS · SWS · WSW · Ssw.</div>
+</div>
+
+<div class="q">
+<h3>7. Reichen drei Winkel? <span class="small">(8 P)</span></h3>
+<p>Zwei Dreiecke haben jeweils die Winkel 40°, 60° und 80°. Sind sie deshalb sicher kongruent?</p>
+<div class="choices">
+<label class="choice"><input type="radio" name="q7" value="ja"> Ja</label>
+<label class="choice"><input type="radio" name="q7" value="nein" data-correct="true"> Nein</label>
+</div>
+<p>Begründe:</p>
+<textarea></textarea>
+<div class="solution"><b>Lösung:</b> Nein. Gleiche drei Winkel bestimmen nur die Form. Die Dreiecke können unterschiedlich groß sein. Es fehlt eine Seitenlänge.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="st"><h2>Teil C – Anwendung mit Dreiecken</h2><span class="pts">10 Punkte</span></div>
+
+<div class="q">
+<h3>8. Schatzkarte <span class="small">(10 P)</span></h3>
+<p>Vom Punkt K liegt der Schatz in Richtung <b>N30°O</b>. Vom Punkt B liegt er in Richtung <b>N40°W</b>.</p>
+<p>a) Wie groß ist der Winkel zwischen den beiden Peilrichtungen?</p>
+<p><input class="short auto" data-answer="70|70°" type="text">°</p>
+<p>b) Beschreibe, wie du den Schatzpunkt zeichnerisch bestimmst.</p>
+<textarea></textarea>
+<div class="solution"><b>Lösung:</b> 30°+40°=70°. Bei K die Richtung 30° östlich von Nord, bei B 40° westlich von Nord einzeichnen; die Strahlen verlängern. Ihr Schnittpunkt ist der Schatz.</div>
+</div>
+</section>
+
+<section class="section">
+<div class="st"><h2>Teil D – Wahrscheinlichkeit</h2><span class="pts">30 Punkte</span></div>
+
+<div class="q">
+<h3>9. Relative Häufigkeit <span class="small">(7 P)</span></h3>
+<p>Bei 600 Versuchen tritt ein Ereignis 276-mal ein.</p>
+<p>a) Relative Häufigkeit als Dezimalzahl:</p>
+<p><input class="short auto" data-answer="0.46|0,46" type="text"></p>
+<p>b) Als Prozentzahl:</p>
+<p><input class="short auto" data-answer="46|46%" type="text"> %</p>
+<div class="solution"><b>Lösung:</b> 276/600=0,46=46 %.</div>
+</div>
+
+<div class="q">
+<h3>10. Erwartete Häufigkeit <span class="small">(7 P)</span></h3>
+<p>Ein Ereignis hat die Wahrscheinlichkeit 36 %. Das Experiment wird 250-mal durchgeführt.</p>
+<p>Erwartete Häufigkeit: <input class="short auto" data-answer="90" type="text">-mal</p>
+<div class="solution"><b>Lösung:</b> 250·0,36=90.</div>
+</div>
+
+<div class="q">
+<h3>11. Laplace-Wahrscheinlichkeit <span class="small">(10 P)</span></h3>
+<p>Ein fairer Würfel mit den Zahlen 1 bis 20 wird einmal geworfen.</p>
+<p>a) P(„gerade Zahl“) = <input class="short auto" data-answer="1/2|10/20|0.5|0,5|50%" type="text"></p>
+<p>b) P(„größer als 15“) = <input class="short auto" data-answer="1/4|5/20|0.25|0,25|25%" type="text"></p>
+<p>c) P(„durch 4 teilbar“) = <input class="short auto" data-answer="1/4|5/20|0.25|0,25|25%" type="text"></p>
+<div class="solution"><b>Lösung:</b> a) 10/20=1/2. b) 16,17,18,19,20 ⇒ 5/20=1/4. c) 4,8,12,16,20 ⇒ 5/20=1/4.</div>
+</div>
+
+<div class="q">
+<h3>12. Gegenereignis <span class="small">(6 P)</span></h3>
+<p>P(A)=62 %. Bestimme P(Ā).</p>
+<p><input class="short auto" data-answer="38|38%|0.38|0,38" type="text"> %</p>
+<div class="solution"><b>Lösung:</b> 100 %−62 %=38 %.</div>
+</div>
+</section>
+
+<div class="score no-print">
+<strong>Automatische Kontrolle</strong>
+<p id="scoreText">Noch nicht geprüft. Begründungen und Konstruktionen bitte zusätzlich mit den Lösungen vergleichen.</p>
+</div>
+
+<div class="notice"><b>Empfehlung:</b> Wenn Baran hier 85 Punkte oder mehr erreicht und die Begründungen sauber formuliert, ist er für die geplanten Themen sehr gut vorbereitet.</div>
+</main>
+</div>
+
+<script>
+function norm(v){return v.trim().toLowerCase().replace(/\s+/g,'').replace(/,/g,'.').replace(/°/g,'')}
+function checkAuto(){
+ let c=0,t=0;
+ document.querySelectorAll('.auto').forEach(el=>{t++;const g=norm(el.value);const a=(el.dataset.answer||'').split('|').map(norm);const ok=a.includes(g);el.classList.toggle('good',ok);el.classList.toggle('bad',!ok&&g.length>0);if(ok)c++});
+ document.querySelectorAll('input[type=radio][data-correct=true]').forEach(el=>{t++;const g=document.querySelector('input[name="'+el.name+'"]:checked');const ok=g===el;document.querySelectorAll('input[name="'+el.name+'"]').forEach(r=>r.closest('.choice')?.classList.remove('good','bad'));if(g){g.closest('.choice')?.classList.add(ok?'good':'bad');if(ok)c++}});
+ const p=t?Math.round(c/t*100):0;
+ document.getElementById('scoreText').innerHTML='Automatisch prüfbare Felder: <b>'+c+' / '+t+'</b> richtig ('+p+' %). Freitext, Begründungen und Konstruktion ayrıca kontrol edilmelidir.';
+ window.scrollTo({top:document.body.scrollHeight,behavior:'smooth'});
+}
+function toggleSolutions(){document.querySelectorAll('.solution').forEach(s=>s.classList.toggle('show'))}
+</script>
+</body>
+</html>
